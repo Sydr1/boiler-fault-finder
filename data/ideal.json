@@ -1,0 +1,1495 @@
+[
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "L1",
+    "aliases": [
+      "l1",
+      "L.1",
+      "L-1",
+      "Flashing L AND 1"
+    ],
+    "meaning": "Flow Temperature Overheat Lockout / No Water Flow Lockout - the boiler has locked out because the CH flow temperature exceeded the safe limit, or no water flow was detected through the primary heat exchanger.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "System not fully filled/vented or isolation/radiator valves closed",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Pump not rotating / pump failure (restricted or no circulation)",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Faulty flow or return thermistor giving incorrect reading",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Air lock in the system",
+        "likelihood": "medium"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Confirm boiler and CH system filled with water and all isolation/radiator valves open",
+        "expected": "Pressure gauge reads 1.0-1.5 bar, no closed valves",
+        "gasSide": false
+      },
+      {
+        "step": "Reset boiler and measure flow/return temperature differential across the boiler",
+        "expected": "Differential below 30C",
+        "gasSide": false
+      },
+      {
+        "step": "Check pump is rotating freely / check pump operation",
+        "expected": "Differential falls below 20C once pump runs correctly",
+        "gasSide": false
+      },
+      {
+        "step": "Check flow and return thermistor resistance (Frame 53 / Section 3.30 pump housing)",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. If caused by low water/no flow, fill and vent the system and open all isolation valves before resetting.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.57 (Frame 78) - Overheat Lockout",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "L2",
+    "aliases": [
+      "l2",
+      "L.2",
+      "L-2",
+      "Flashing L AND 2"
+    ],
+    "meaning": "Ignition Lockout - the boiler failed to detect a flame within the allowed ignition attempts and has locked out.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "No or low gas supply pressure to the boiler",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Faulty or incorrectly positioned ignition/detection electrode, or poor harness continuity",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Blocked condensate pipe/siphon preventing correct operation",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty spark generator",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty gas valve or gas valve wiring/PCB fault",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Reset the boiler - does it ignite briefly then extinguish?",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Check gas inlet pressure at the boiler",
+        "expected": ">18 mbar available at boiler inlet",
+        "gasSide": true
+      },
+      {
+        "step": "Check detection electrode and harness: continuity, visual condition and position (Frame 55)",
+        "expected": "Continuity present, electrode clean and correctly positioned",
+        "gasSide": true
+      },
+      {
+        "step": "Check condensate pipe/siphon for blockage",
+        "expected": "Clear, no blockage",
+        "gasSide": false
+      },
+      {
+        "step": "Check approx. 215 Vdc supply is present at the gas valve",
+        "expected": "Reading greater than 150V indicates correct supply",
+        "gasSide": true
+      },
+      {
+        "step": "Check spark generator and associated harness: continuity and visual condition (Frame 56)",
+        "expected": "Continuity present, no visible damage",
+        "gasSide": true
+      },
+      {
+        "step": "Check ignition electrode and harness: continuity, visual condition and position (Frame 54)",
+        "expected": "Continuity present, correct spark gap/position",
+        "gasSide": true
+      },
+      {
+        "step": "Unplug gas valve and check resistance between outside pins",
+        "expected": "Approx 4 kOhm (+/- 2)",
+        "gasSide": true
+      },
+      {
+        "step": "Check wiring continuity from gas valve to PCB",
+        "expected": "Continuity present",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Check other gas appliances work and that the gas isolation valve under the boiler is open before resetting.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.57 (Frame 79) - Ignition Lockout",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "L3",
+    "aliases": [
+      "l3",
+      "L.3",
+      "L-3",
+      "Flashing L AND 3"
+    ],
+    "meaning": "No Water Flow Lockout - the boiler has locked out because no water flow was detected through the primary heat exchanger.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "System not filled/vented or isolation/radiator valves closed",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Pump failure or restricted pump rotation",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Faulty flow/return thermistor",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty no-water-flow thermistor (top of heat exchanger)",
+        "likelihood": "medium"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Confirm boiler and CH system filled with water and all isolation/radiator valves open",
+        "expected": "Pressure gauge reads 1.0-1.5 bar",
+        "gasSide": false
+      },
+      {
+        "step": "Reset boiler and measure flow/return temperature differential",
+        "expected": "Differential below 30C",
+        "gasSide": false
+      },
+      {
+        "step": "Check pump connection and that pump rotates freely",
+        "expected": "Differential falls below 20C",
+        "gasSide": false
+      },
+      {
+        "step": "Check flow and return thermistor resistance (Frame 53)",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      },
+      {
+        "step": "Check no-water-flow thermistor resistance (Frame 73)",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Fill and vent the system and open all isolation valves before resetting.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.58 (Frame 80) - No Water Flow Lockout",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "L5",
+    "aliases": [
+      "l5",
+      "L.5",
+      "L-5",
+      "Flashing L AND 5",
+      "Too Many Resets"
+    ],
+    "meaning": "Too Many Resets - the boiler has been reset 5 times within 15 minutes and has locked out to prevent repeated unsuccessful restart attempts.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Repeated, unresolved underlying lockout (e.g. ignition lockout or overheat lockout) triggering the reset counter",
+        "likelihood": "high"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check fault history / identify the underlying fault that is causing repeated resets",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Turn the electrical power to the boiler off and then on to clear the too-many-resets condition",
+        "expected": "Boiler re-enters its normal start sequence",
+        "gasSide": false
+      }
+    ],
+    "reset": "Turn the electrical power supply to the boiler off and then on again. Resolve the underlying repeating fault before attempting further resets; contact installer if it persists.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.56 (Main Menu chart) - Too Many Resets",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "L6",
+    "aliases": [
+      "l6",
+      "L.6",
+      "L-6",
+      "Flashing L AND 6",
+      "Fault 8",
+      "False Flame Lockout"
+    ],
+    "meaning": "False Flame Lockout (referred to in the manual's main fault chart as 'Fault 8') - the boiler has detected a flame signal when no flame should be present.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Deteriorated or faulty flame sense (detection) electrode",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Poor continuity / fault in flame detection electrode wiring or in-line connector",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Internal boiler wiring routing or integrity fault",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Reset the boiler - does it work OK afterwards?",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Check routing and integrity of internal boiler wiring",
+        "expected": "No damage, securely routed",
+        "gasSide": false
+      },
+      {
+        "step": "Check condition of the flame sense electrode and replace if deteriorated",
+        "expected": "No visible deterioration/carbon build-up",
+        "gasSide": true
+      },
+      {
+        "step": "Separate the flame detection electrode in-line connector and check continuity between the terminal pins connected to the electrode",
+        "expected": "Continuity present",
+        "gasSide": true
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.58 (Frame 81) - Fault 8 / False Flame Lockout",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F0",
+    "aliases": [
+      "f0",
+      "F.0",
+      "F-0",
+      "Flashing F AND 0"
+    ],
+    "meaning": "No Water Flow Thermistor Fault - the thermistor located at the top of the heat exchanger used to detect no-water-flow conditions has failed or is incorrectly wired.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty no-water-flow thermistor",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Wiring/connector fault between thermistor and PCB low-voltage 11-way connector",
+        "likelihood": "medium"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Disconnect wiring from the no-water-flow thermistor and measure its resistance",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring is securely connected to the low-voltage 11-way connector at the front left of the PCB",
+        "expected": "Secure connection",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring is securely connected to the no-water-flow thermistor (top of heat exchanger)",
+        "expected": "Secure connection",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Contact installer - this fault requires an engineer visit.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.61 (Frame 88) - No Water Flow Thermistor Fault",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F1",
+    "aliases": [
+      "f1",
+      "F.1",
+      "F-1",
+      "Flashing F AND 1"
+    ],
+    "meaning": "Low Water Pressure - the central heating system water pressure has fallen below the minimum required for safe operation.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "System water pressure not topped up / undetected leak",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Loose or faulty connections on the water pressure sensor",
+        "likelihood": "low"
+      },
+      {
+        "cause": "Faulty water pressure sensor",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check boiler/CH system is filled with water, pressure gauge reading",
+        "expected": "1.0-1.5 bar",
+        "gasSide": false
+      },
+      {
+        "step": "Check connections on the water pressure sensor are secure",
+        "expected": "Secure, no looseness",
+        "gasSide": false
+      },
+      {
+        "step": "Top up system pressure via the filling loop",
+        "expected": "Gauge reads 1.0-1.5 bar",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Fill and vent the system via the filling loop to 1.0-1.5 bar first.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.58 (Frame 82) - Low Water Pressure",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F2",
+    "aliases": [
+      "f2",
+      "F.2",
+      "F-2",
+      "Flashing F AND 2"
+    ],
+    "meaning": "Flame Loss - the boiler ignited successfully but lost the flame signal during operation.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Interrupted or low gas supply pressure",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Faulty/incorrectly positioned ignition/detection electrode",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Blocked condensate pipe or blocked flue",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty spark generator or gas valve",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Does the boiler ignite for a short time and then extinguish?",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Check gas inlet pressure at the boiler",
+        "expected": ">18 mbar available at boiler inlet",
+        "gasSide": true
+      },
+      {
+        "step": "Check detection electrode and harness: continuity, visual condition and position (Frame 55)",
+        "expected": "Continuity present, correctly positioned",
+        "gasSide": true
+      },
+      {
+        "step": "Check condensate pipe and flue for blockage",
+        "expected": "Clear, no blockage",
+        "gasSide": false
+      },
+      {
+        "step": "Check approx. 215 Vdc supply is present at gas valve while flame is on",
+        "expected": "Reading greater than 150V indicates correct supply",
+        "gasSide": true
+      },
+      {
+        "step": "Check spark generator and harness: continuity and visual condition (Frame 56)",
+        "expected": "Continuity present, no visible damage",
+        "gasSide": true
+      },
+      {
+        "step": "Check ignition electrode and harness: continuity, visual condition and position (Frame 54)",
+        "expected": "Continuity present, correct position",
+        "gasSide": true
+      },
+      {
+        "step": "Check siphon and condensate drain pipework for blockage",
+        "expected": "Clear, no blockage",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.59 (Frame 83) - Flame Loss",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F3",
+    "aliases": [
+      "f3",
+      "F.3",
+      "F-3",
+      "Flashing F AND 3"
+    ],
+    "meaning": "Fan Fault - the flue fan has failed to operate or run correctly.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty/loose wiring between fan and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty fan motor",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB fan drive output",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check wiring from fan to PCB: secure connections at both ends, no deterioration, continuity present",
+        "expected": "Continuity present, connections secure",
+        "gasSide": false
+      },
+      {
+        "step": "Check for 230 Vac at the Blue and Brown connections on the 3-way fan connector",
+        "expected": "230 Vac present",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Contact installer - replace fan or PCB as indicated by the checks.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.59 (Frame 84) - Fan Fault",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F4",
+    "aliases": [
+      "f4",
+      "F.4",
+      "F-4",
+      "Flashing F AND 4"
+    ],
+    "meaning": "Flow Thermistor Fault - the CH flow thermistor has failed or is giving an out-of-range reading.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty flow thermistor",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Wiring/connector fault between thermistor and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Remove flow thermistor from the CH flow pipe and measure resistance across its terminal pins",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      },
+      {
+        "step": "Check continuity between the PCB and the thermistor wiring",
+        "expected": "Continuity present",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Fit a new thermistor, repair wiring, or replace PCB as indicated by the checks.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.60 (Frame 85) - Flow Thermistor Fault",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F5",
+    "aliases": [
+      "f5",
+      "F.5",
+      "F-5",
+      "Flashing F AND 5"
+    ],
+    "meaning": "Return Thermistor Fault - the CH return thermistor has failed or is giving an out-of-range reading.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty return thermistor",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Wiring/connector fault between thermistor and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Remove return thermistor from the CH return pipe and measure resistance across its terminal pins",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      },
+      {
+        "step": "Check continuity between the PCB and the thermistor wiring",
+        "expected": "Continuity present",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Fit a new thermistor, repair wiring, or replace PCB as indicated by the checks.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.60 (Frame 86) - Return Thermistor Fault",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F6",
+    "aliases": [
+      "f6",
+      "F.6",
+      "F-6",
+      "Flashing F AND 6"
+    ],
+    "meaning": "Outside Sensor Fault - the external weather-compensation sensor has failed or is incorrectly wired.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "Faulty outside sensor",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Wiring fault between outside sensor, terminal block and PCB",
+        "likelihood": "medium"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Disconnect wires to the outside sensor and measure resistance across its terminal pins",
+        "expected": "31,000-35,000 ohms at 0C; 15,000-16,500 ohms at 15C; 7,700-8,500 ohms at 30C",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring securely connected between the incoming terminal block connection and the PCB",
+        "expected": "Secure connection",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring securely connected at both the boiler terminal block and the outside sensor",
+        "expected": "Secure connection",
+        "gasSide": false
+      }
+    ],
+    "reset": "Official reset procedure: turn the mode knob to the reset position and immediately turn the knob back to the required setting. Only required if weather compensation/outside sensor accessory is fitted.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.61 (Frame 87) - Outside Sensor Fault",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "F7",
+    "aliases": [
+      "f7",
+      "F.7",
+      "F-7",
+      "Flashing F AND 7",
+      "Low Mains Volume"
+    ],
+    "meaning": "Low Mains Voltage (shown in the manual's main fault chart as 'Low mains voltage') - the electrical supply voltage to the boiler is outside the acceptable range.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "Low or unstable incoming mains electricity supply",
+        "likelihood": "high"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Measure incoming mains voltage at the boiler terminals L and N",
+        "expected": "check manual (nominal 230 Vac supply expected)",
+        "gasSide": false
+      }
+    ],
+    "reset": "No boiler-side reset is specified; contact the electricity provider to resolve the supply voltage issue, then reset the boiler once supply is restored.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.56 (Main Menu chart) - Low Mains Voltage",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "medium"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "C0",
+    "aliases": [
+      "c0",
+      "C.0",
+      "C-0",
+      "Flashing C AND 0",
+      "PCB Replaced"
+    ],
+    "meaning": "BCC Activation / PCB Replaced - shown after a new PCB and Boiler Chip Card (BCC) have been fitted, prompting an initial activation reset.",
+    "severity": "info",
+    "causes": [
+      {
+        "cause": "New PCB/BCC just fitted and awaiting the activation reset (expected operational step, not a defect)",
+        "likelihood": "high"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Confirm the correct BCC for the boiler range/output is fitted, oriented with 'TOP' side up",
+        "expected": "Correct BCC fitted and correctly oriented",
+        "gasSide": false
+      },
+      {
+        "step": "Reset the boiler via the mode knob once 'c0' is displayed",
+        "expected": "Boiler proceeds to normal operation",
+        "gasSide": false
+      }
+    ],
+    "reset": "Turn the mode knob to the reset position and immediately back to the required setting to activate the new PCB/BCC.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.56 (Main Menu chart) - PCB Replaced",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "medium"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic+ Combi",
+    "code": "C2",
+    "aliases": [
+      "c2",
+      "C.2",
+      "C-2",
+      "Flashing C AND 2",
+      "BCC Fault"
+    ],
+    "meaning": "Boiler Chip Card (BCC) Fault - the PCB has not recognised a valid Boiler Chip Card for this boiler's range/output.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Incorrect or missing BCC for this specific boiler model/output",
+        "likelihood": "high"
+      },
+      {
+        "cause": "BCC not correctly seated or incorrectly oriented in its slot",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check the correct BCC for the boiler range/output is securely inserted at the front left of the PCB, 'TOP' side up",
+        "expected": "Correct BCC fitted and correctly oriented",
+        "gasSide": false
+      },
+      {
+        "step": "Replace with a new, correct BCC, power on until 'c0' is shown, then reset the boiler - is 'c2' still shown?",
+        "expected": "'c2' clears after the correct BCC is fitted and the boiler reset",
+        "gasSide": false
+      }
+    ],
+    "reset": "Fit the correct BCC for the boiler, power on until 'c0' is displayed, then turn the mode knob to reset and back. If 'c2' persists with a confirmed correct BCC, replace the PCB.",
+    "source": {
+      "manual": "Ideal Logic+ Combi 24, 30, 35 - Installation and Servicing (UIN 204978 A04, October 2010)",
+      "page": "p.62 (Frame 89) - Boiler Chip Card Fault",
+      "url": "https://idealheating.com/support/faqs/boiler-fault-codes"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "OVERHEAT LOCKOUT",
+    "aliases": [
+      "Overheat Lockout",
+      "overheat lockout",
+      "4.2"
+    ],
+    "meaning": "The boiler has locked out because the CH flow temperature exceeded the safe limit, or no/insufficient water flow was detected through the primary heat exchanger. Shown as plain text on the LCD status display (this range does not use an alphanumeric fault code).",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "System not fully filled/vented or isolation/radiator valves closed",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Pump not rotating / pump failure",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Faulty flow or return thermistor",
+        "likelihood": "medium"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Confirm boiler and CH system filled with water, isolation, system filter and radiator valves open",
+        "expected": "Pressure gauge reads 1.0-1.5 bar",
+        "gasSide": false
+      },
+      {
+        "step": "Restart boiler and measure flow/return temperature differential across the boiler",
+        "expected": "Differential below 30C",
+        "gasSide": false
+      },
+      {
+        "step": "Check pump is rotating freely",
+        "expected": "Differential falls below 20C",
+        "gasSide": false
+      },
+      {
+        "step": "Check flow and return thermistor resistance (Section 3.15 & 3.30)",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler. Fill and vent the system and open all isolation valves first if that was the cause.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.54-55, Section 4.2 - Overheat Lockout",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "IGNITION LOCKOUT",
+    "aliases": [
+      "Ignition Lockout",
+      "ignition lockout",
+      "4.3"
+    ],
+    "meaning": "The boiler failed to detect a flame within the allowed ignition attempts and has locked out. Shown as plain text on the LCD status display.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "No or low gas supply pressure",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Faulty/incorrectly positioned detection electrode, or blocked condensate pipe",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty spark generator, ignition electrode, or gas valve",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Restart boiler - does it ignite for a short time and then extinguish?",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Check gas pressure available at the boiler inlet",
+        "expected": ">18 mbar",
+        "gasSide": true
+      },
+      {
+        "step": "Check detection electrode and harness: continuity, visual condition and position",
+        "expected": "Continuity present, correctly positioned",
+        "gasSide": true
+      },
+      {
+        "step": "Check condensate pipe for blockage",
+        "expected": "Clear, no blockage",
+        "gasSide": false
+      },
+      {
+        "step": "Check approx. 24 Vdc supply available at the gas valve",
+        "expected": "24 Vdc present",
+        "gasSide": true
+      },
+      {
+        "step": "Check spark generator and harness: continuity and visual condition",
+        "expected": "Continuity present, no visible damage",
+        "gasSide": true
+      },
+      {
+        "step": "Check ignition electrode and harness: continuity, visual condition and position",
+        "expected": "Continuity present, correct position",
+        "gasSide": true
+      },
+      {
+        "step": "Check trap and condensate drain pipework for blockage",
+        "expected": "Clear, no blockage",
+        "gasSide": false
+      },
+      {
+        "step": "Unplug gas valve, check resistance between outside pins",
+        "expected": "Approx 4 kOhm (+/- 2)",
+        "gasSide": true
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.55, Section 4.3 - Ignition Lockout",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "FLAME ON BEFORE GAS VALVE ON",
+    "aliases": [
+      "Flame on before gas valve on",
+      "4.4"
+    ],
+    "meaning": "Safety lockout triggered when the control detects a flame signal before the gas valve has been commanded open.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty ignition/detection electrode or wiring giving a false flame signal",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty gas valve or PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Restart the boiler, does it work OK?",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Check routing and integrity of internal boiler wiring",
+        "expected": "No damage, securely routed",
+        "gasSide": false
+      },
+      {
+        "step": "Check condition of the electrode and replace if deteriorated",
+        "expected": "No visible deterioration",
+        "gasSide": true
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.55, Section 4.4 - Flame On Before Gas Valve On",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "medium"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "LOW WATER PRESSURE",
+    "aliases": [
+      "Low Water Pressure",
+      "low water pressure",
+      "4.5"
+    ],
+    "meaning": "The central heating system water pressure has fallen below the minimum required for safe operation.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "System water pressure not topped up / undetected leak",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Loose connections on, or faulty, water pressure switch",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check boiler/CH system filled with water and all isolation/radiator valves open, pressure gauge reading",
+        "expected": "1.0-1.5 bar",
+        "gasSide": false
+      },
+      {
+        "step": "Check connections on the water pressure switch are secure",
+        "expected": "Secure, no looseness",
+        "gasSide": false
+      },
+      {
+        "step": "Top up pressure via the filling loop",
+        "expected": "Gauge reads 1.0-1.5 bar",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler. Fill and vent the system via the filling loop first.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.55, Section 4.5 - Low Water Pressure",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "FLAME LOSS",
+    "aliases": [
+      "Flame Loss",
+      "flame loss",
+      "4.6"
+    ],
+    "meaning": "The boiler ignited successfully but lost the flame signal during operation.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Interrupted or low gas supply pressure",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Faulty/incorrectly positioned ignition/detection electrode",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Blocked condensate pipe or blocked flue",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty spark generator or gas valve",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Does the boiler ignite for a short time and then extinguish?",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Check gas pressure available at the boiler inlet",
+        "expected": ">18 mbar",
+        "gasSide": true
+      },
+      {
+        "step": "Check ignition/detection electrode and harness: continuity, visual condition and position",
+        "expected": "Continuity present, correctly positioned",
+        "gasSide": true
+      },
+      {
+        "step": "Check condensate pipe and flue for blockage",
+        "expected": "Clear, no blockage",
+        "gasSide": false
+      },
+      {
+        "step": "Check 24 Vdc supply available at gas valve while flame is on",
+        "expected": "24 Vdc present",
+        "gasSide": true
+      },
+      {
+        "step": "Check spark generator and harness: continuity and visual condition",
+        "expected": "Continuity present, no visible damage",
+        "gasSide": true
+      },
+      {
+        "step": "Check trap and condensate drain pipework for blockage",
+        "expected": "Clear, no blockage",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.56, Section 4.6 - Flame Loss",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "FAN FAULT",
+    "aliases": [
+      "Fan Fault",
+      "fan fault",
+      "4.7"
+    ],
+    "meaning": "The flue fan has failed to operate or run correctly.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty/loose wiring between fan and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty fan motor",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check wiring from fan to PCB: secure connections at both ends, no deterioration, continuity present",
+        "expected": "Continuity present, connections secure",
+        "gasSide": false
+      },
+      {
+        "step": "Check for 230 Vac at the Blue and Brown connections on the 3-way fan connector",
+        "expected": "230 Vac present",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler. Replace fan or PCB as indicated by the checks (Section 3.16).",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.56, Section 4.7 - Fan Fault",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "FLOW THERMISTOR FAULT",
+    "aliases": [
+      "Flow Thermistor Fault",
+      "flow thermistor fault",
+      "4.8"
+    ],
+    "meaning": "The CH flow thermistor has failed or is giving an out-of-range reading.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty flow thermistor",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Wiring/connector (8-way connector X7) fault between thermistor and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Disconnect wiring from flow thermistor (lower LHS of boiler) and measure resistance across terminal pins",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring securely connected to the 8-way connector X7 on the PCB",
+        "expected": "Secure connection",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler. Fit a new thermistor, repair wiring, or replace PCB as indicated.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.57, Section 4.8 - Flow Thermistor Fault",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "RETURN THERMISTOR FAULT",
+    "aliases": [
+      "Return Thermistor Fault",
+      "return thermistor fault",
+      "4.9"
+    ],
+    "meaning": "The CH return thermistor (located in the pump housing) has failed or is giving an out-of-range reading.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty return thermistor",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Wiring/connector fault between thermistor and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Measure resistance across the return thermistor terminal pins (pump housing)",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C; 1,000-1,100 ohms at 85C",
+        "gasSide": false
+      },
+      {
+        "step": "Check continuity between the PCB and the thermistor",
+        "expected": "Continuity present",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler. Fit a new thermistor, repair wiring, or replace PCB as indicated.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.57, Section 4.9 - Return Thermistor Fault",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "OUTSIDE SENSOR FAULT",
+    "aliases": [
+      "Outside Sensor Fault",
+      "outside sensor fault",
+      "4.10"
+    ],
+    "meaning": "The external weather-compensation sensor has failed or is incorrectly wired.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "Faulty outside sensor",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Wiring fault between outside sensor, terminal block and PCB",
+        "likelihood": "medium"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Disconnect wires to the outside sensor and measure resistance across its terminal pins",
+        "expected": "31,000-35,000 ohms at 0C; 15,000-16,500 ohms at 15C; 7,700-8,500 ohms at 30C",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring securely connected between the incoming terminal block connection and the PCB",
+        "expected": "Secure connection",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring securely connected at both the boiler terminal block and the outside sensor",
+        "expected": "Secure connection",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler. Only relevant if the weather compensation/outside sensor accessory is fitted.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.58, Section 4.10 - Outside Sensor Fault",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "NO CH OPERATION BUT DHW WORKS OK",
+    "aliases": [
+      "No CH Operation but DHW works OK",
+      "4.11"
+    ],
+    "meaning": "The boiler produces domestic hot water normally but will not fire for central heating demand.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "Boiler mode set to 'Off' for CH / not switched to a heating mode",
+        "likelihood": "high"
+      },
+      {
+        "cause": "CH timer or room thermostat not calling for heat / switched off",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Closed radiator valves",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "No OpenTherm room stat link wire fitted where required",
+        "likelihood": "low"
+      },
+      {
+        "cause": "Faulty diverter valve",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check whether 'Off' is shown underneath the radiator symbol on the display; press Mode button until it clears",
+        "expected": "'Off' not shown under radiator icon",
+        "gasSide": false
+      },
+      {
+        "step": "Check CH timer and room thermostat are switched on and calling for heat",
+        "expected": "Timer/thermostat calling for heat",
+        "gasSide": false
+      },
+      {
+        "step": "Check radiator valves are open",
+        "expected": "Valves open",
+        "gasSide": false
+      },
+      {
+        "step": "Check for 230 Vac at the SL1 terminal from the timer/room stat",
+        "expected": "230 Vac present when calling for heat",
+        "gasSide": false
+      },
+      {
+        "step": "If no OpenTherm room stat is fitted, check a link wire is fitted across the OpenTherm connections",
+        "expected": "Link wire fitted",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.58-59, Section 4.11 - No CH Operation but DHW works OK",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "NO DHW BUT CH WORKS OK",
+    "aliases": [
+      "No DHW but CH Works OK",
+      "4.12"
+    ],
+    "meaning": "The boiler provides central heating normally but will not produce domestic hot water.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "Diverter valve stuck in CH position or not fully engaged",
+        "likelihood": "high"
+      },
+      {
+        "cause": "DHW flow turbine blocked with debris or faulty",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Wiring fault between PCB and diverter valve motor or DHW turbine",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Hot and cold pipework crossed",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check whether the tap symbol changes from blue to orange when a tap is turned on",
+        "expected": "check manual",
+        "gasSide": false
+      },
+      {
+        "step": "Check DHW flow rates are correct",
+        "expected": "35C temperature rise at nominal flow rate",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring between PCB and diverter valve motor is connected",
+        "expected": "Securely connected, continuity present",
+        "gasSide": false
+      },
+      {
+        "step": "Check diverter head is fully engaged and clip secured onto the water set",
+        "expected": "Fully engaged and clipped",
+        "gasSide": false
+      },
+      {
+        "step": "Remove turbine and check for debris in turbine and filter",
+        "expected": "No debris, turbine turns freely",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.59, Section 4.12 - No DHW but CH Works OK",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "NO DISPLAY",
+    "aliases": [
+      "No Display",
+      "4.13"
+    ],
+    "meaning": "The boiler's LCD status display shows nothing at all (blank), indicating a power or wiring fault rather than a logged fault code.",
+    "severity": "warning",
+    "causes": [
+      {
+        "cause": "No electrical supply reaching the boiler",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Wiring fault between terminal block and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Check for 230 Vac supply to the boiler at terminals L and N",
+        "expected": "230 Vac present",
+        "gasSide": false
+      },
+      {
+        "step": "Check wiring from the terminal block to the PCB is connected securely",
+        "expected": "Secure connection",
+        "gasSide": false
+      }
+    ],
+    "reset": "Not applicable via on-screen reset (no display); restore electrical supply/wiring then power-cycle the boiler.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.60, Section 4.13 - No Display",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  },
+  {
+    "make": "Ideal",
+    "series": "Logic Max Combi2",
+    "code": "DHW THERMISTOR FAULT",
+    "aliases": [
+      "DHW Thermistor Fault",
+      "4.14"
+    ],
+    "meaning": "The domestic hot water thermistor has failed or is giving an out-of-range reading.",
+    "severity": "lockout",
+    "causes": [
+      {
+        "cause": "Faulty DHW thermistor",
+        "likelihood": "high"
+      },
+      {
+        "cause": "Wiring/connector fault between thermistor and PCB",
+        "likelihood": "medium"
+      },
+      {
+        "cause": "Faulty PCB",
+        "likelihood": "low"
+      }
+    ],
+    "checks": [
+      {
+        "step": "Disconnect the DHW thermistor electrical connection and measure resistance across its terminal pins",
+        "expected": "9,700-10,300 ohms at 25C; 2,400-2,600 ohms at 60C",
+        "gasSide": false
+      },
+      {
+        "step": "Check continuity between the PCB and the thermistor",
+        "expected": "Continuity present",
+        "gasSide": false
+      }
+    ],
+    "reset": "Press the Restart button on the boiler control panel to restart the boiler. Fit a new thermistor, repair wiring, or replace PCB as indicated.",
+    "source": {
+      "manual": "Ideal Logic Max Combi2 C24, C30, C35 - Installation and Servicing (UIN 228290 A06, October 2022)",
+      "page": "p.60, Section 4.14 - DHW Thermistor Fault",
+      "url": "https://www.freeboilermanuals.com/assets/pdf/ideal/logic-max-combi-2-installation-and-servicing-guide.pdf"
+    },
+    "confidence": "high"
+  }
+]

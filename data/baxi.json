@@ -1,0 +1,734 @@
+[
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "A.00.34",
+    "aliases": ["A0034", "A.00.34", "A00.34", "00.34"],
+    "meaning": "Outdoor temperature sensor expected but not detected",
+    "severity": "info",
+    "causes": [
+      {"cause": "Outdoor sensor not connected", "likelihood": "high"},
+      {"cause": "Outdoor sensor wired incorrectly", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Confirm an outdoor sensor is actually fitted/required for the configured heating curve", "expected": "Sensor present if weather compensation enabled", "gasSide": false},
+      {"step": "Check outdoor sensor connection at the PCB terminals", "expected": "Sensor correctly connected per wiring diagram", "gasSide": false}
+    ],
+    "reset": "Clears automatically once the sensor is connected correctly; no manual reset button action required.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "73 (Section 11.2, Tab.33)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "A.02.06",
+    "aliases": ["A0206", "A.02.06", "A02.06", "02.06"],
+    "meaning": "Low system pressure in heating circuit",
+    "severity": "warning",
+    "causes": [
+      {"cause": "System water loss through a leak", "likelihood": "high"},
+      {"cause": "Expansion vessel has lost charge/is faulty", "likelihood": "medium"},
+      {"cause": "System not topped up after draining/service", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check the system pressure gauge and restore pressure via the filling loop", "expected": "1.0-1.5 bar cold", "gasSide": false},
+      {"step": "Check the expansion vessel charge pressure", "expected": "Matches system design pressure (typically ~1 bar) - check manual for exact figure", "gasSide": false},
+      {"step": "Visually inspect system and boiler for leaks", "expected": "No visible leaks/weeping joints", "gasSide": false}
+    ],
+    "reset": "Clears automatically once pressure is restored above the low-pressure threshold; no reset button action required.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "73 (Section 11.2, Tab.33)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.00.04",
+    "aliases": ["E0004", "E.00.04", "E00.04", "00.04"],
+    "meaning": "Return temperature sensor disconnected",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Return NTC sensor wiring disconnected at sensor or PCB", "likelihood": "high"},
+      {"cause": "Failed return temperature sensor", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check operation of the return temperature sensor", "expected": "Resistance reading consistent with a healthy NTC sensor (check manual for exact ohms/temperature table)", "gasSide": false},
+      {"step": "Check the sensor-to-PCB connection", "expected": "Connector fully seated, no damaged pins/wiring", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second after fault is corrected. If the fault recurs frequently, contact an authorised technical assistance centre.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "75 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.00.05",
+    "aliases": ["E0005", "E.00.05", "E00.05", "00.05"],
+    "meaning": "Return temperature sensor short circuited",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Return NTC sensor short-circuited internally", "likelihood": "high"},
+      {"cause": "Damaged/pinched sensor wiring causing a short", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check operation of the return temperature sensor", "expected": "Resistance reading consistent with a healthy NTC sensor, not 0 ohm/short (check manual for exact table)", "gasSide": false},
+      {"step": "Check sensor/PCB connection and wiring for damage", "expected": "No chafed/shorted wiring", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second after fault is corrected. If the fault recurs frequently, contact an authorised technical assistance centre.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "75 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.00.16",
+    "aliases": ["E0016", "E.00.16", "E00.16", "00.16"],
+    "meaning": "DHW tank temperature sensor not connected",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "DHW cylinder/tank sensor disconnected (open circuit)", "likelihood": "high"},
+      {"cause": "Failed DHW tank sensor", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check operation of the DHW tank sensor", "expected": "Sensor circuit closed, not open", "gasSide": false},
+      {"step": "Check the sensor-to-PCB connection", "expected": "Connector fully seated, wiring intact", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second after fault is corrected.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "75 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.00.17",
+    "aliases": ["E0017", "E.00.17", "E00.17", "00.17"],
+    "meaning": "DHW tank temperature sensor short-circuited",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "DHW cylinder/tank sensor short-circuited (closed circuit)", "likelihood": "high"},
+      {"cause": "Damaged sensor wiring causing a short", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check operation of the DHW tank sensor", "expected": "Sensor not permanently closed/shorted", "gasSide": false},
+      {"step": "Check the sensor-to-PCB connection and cable condition", "expected": "No shorted/damaged wiring", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second after fault is corrected.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "75 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.01.04",
+    "aliases": ["E0104", "E.01.04", "E01.04", "01.04"],
+    "meaning": "Flame loss detected five times in 24 hours (with burner on)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Unstable or insufficient gas supply", "likelihood": "high"},
+      {"cause": "Incorrect gas valve calibration", "likelihood": "medium"},
+      {"cause": "Flue/air intake restriction causing poor combustion", "likelihood": "medium"},
+      {"cause": "Low/unstable mains voltage", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check the gas supply pressure", "expected": "Stable, within the minimum working pressure for the gas type (see manual)", "gasSide": true},
+      {"step": "Check the gas valve calibration/CO2 setting", "expected": "CO2% within the manufacturer's commissioning range (check manual)", "gasSide": true},
+      {"step": "Check the air intake and flue gas exhaust terminal for blockage/restriction", "expected": "Terminal and ducting clear and correctly terminated", "gasSide": true},
+      {"step": "Check mains power supply voltage", "expected": "230V ~50Hz stable", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second after the cause is corrected. If faults recur frequently, further investigation is required.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "75-76 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "H.01.18",
+    "aliases": ["H0118", "H.01.18", "H01.18", "01.18"],
+    "meaning": "No water circulation (temporary)",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Air trapped in the system/boiler", "likelihood": "high"},
+      {"cause": "Low installation pressure restricting circulation", "likelihood": "medium"},
+      {"cause": "Pump not running or jammed", "likelihood": "medium"},
+      {"cause": "Closed valves or blockage restricting flow", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check the boiler/installation water circulation", "expected": "Free circulation, no blockages", "gasSide": false},
+      {"step": "Activate the manual venting (de-aeration) cycle", "expected": "Air successfully purged from system", "gasSide": false},
+      {"step": "Check the installation pressure", "expected": "1.0-1.5 bar cold", "gasSide": false}
+    ],
+    "reset": "Self-clears once circulation is restored; being a temporary (H) fault it disappears automatically, in some cases after up to 10 minutes.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "74 (Section 11.2, Tab.33)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "H.02.07",
+    "aliases": ["H0207", "H.02.07", "H02.07", "02.07"],
+    "meaning": "Low pressure in heating circuit (permanently)",
+    "severity": "warning",
+    "causes": [
+      {"cause": "System water loss through a leak", "likelihood": "high"},
+      {"cause": "Automatic filling (where fitted) failing to maintain pressure", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check the system pressure and restore it", "expected": "1.0-1.5 bar cold", "gasSide": false},
+      {"step": "Check the expansion vessel pressure", "expected": "check manual", "gasSide": false},
+      {"step": "Check for system/boiler leaks", "expected": "No visible leaks", "gasSide": false}
+    ],
+    "reset": "Self-clears once pressure is restored above threshold.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "74 (Section 11.2, Tab.33)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.04.08",
+    "aliases": ["E0408", "E.04.08", "E04.08", "04.08"],
+    "meaning": "Maximum safe temperature value reached",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Insufficient water circulation through the boiler", "likelihood": "high"},
+      {"cause": "Safety (overheat) thermostat tripped/faulty", "likelihood": "medium"},
+      {"cause": "Pump failure", "likelihood": "medium"},
+      {"cause": "Air in the system", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check the installation water pressure", "expected": "1.0-1.5 bar cold", "gasSide": false},
+      {"step": "Switch on the manual degassing (venting) function", "expected": "Air purged from system", "gasSide": false},
+      {"step": "Check that the pump is working", "expected": "Pump runs and circulates correctly", "gasSide": false},
+      {"step": "Check circulation in the boiler/installation", "expected": "Free circulation, no blockages", "gasSide": false},
+      {"step": "Check the safety thermostat connection and operation", "expected": "Thermostat wired correctly and functioning (closed circuit when cool)", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second once the circulation/safety thermostat issue is corrected.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "76 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.04.10",
+    "aliases": ["E0410", "E.04.10", "E04.10", "04.10"],
+    "meaning": "Burner failed to ignite after 4 attempts",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "No/insufficient gas supply at ignition", "likelihood": "high"},
+      {"cause": "Faulty gas valve electrical connection or calibration", "likelihood": "medium"},
+      {"cause": "Faulty ignition/detection electrode or connections", "likelihood": "medium"},
+      {"cause": "Fan not running correctly, or flue exhaust blocked", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check the gas supply pressure", "expected": "At least the minimum working pressure for the gas type (see Section 7.4.1 - 18 mbar Natural Gas / 37 mbar LPG at the inlet test point)", "gasSide": true},
+      {"step": "Check the gas valve electrical connection", "expected": "Connector fully seated, wiring intact", "gasSide": true},
+      {"step": "Check the gas valve calibration", "expected": "Set per commissioning instructions (check manual)", "gasSide": true},
+      {"step": "Check operation of the gas valve", "expected": "Opens/closes correctly on demand", "gasSide": true},
+      {"step": "Check electrode electrical connections and condition", "expected": "Electrode clean, correctly gapped, leads intact", "gasSide": true},
+      {"step": "Check operation of the fan", "expected": "Fan runs at correct speed", "gasSide": false},
+      {"step": "Check condition of the flue gas exhaust for blockages", "expected": "Flue clear, correctly terminated", "gasSide": true}
+    ],
+    "reset": "Press the Reset button for approximately 1 second once the ignition fault is corrected.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "76 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.04.11",
+    "aliases": ["E0411", "E.04.11", "E04.11", "04.11"],
+    "meaning": "VPS (gas valve proving system) test failed",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve proving system (VPS) fault", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check manual - no specific field check listed for this code in the manual's fault table", "expected": "check manual", "gasSide": true}
+    ],
+    "reset": "check manual",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "76 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "low"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.04.12",
+    "aliases": ["E0412", "E.04.12", "E04.12", "04.12"],
+    "meaning": "Ignition failure - flame monitoring (parasitic flame detected during ignition)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Poor/faulty earth (ground) continuity", "likelihood": "high"},
+      {"cause": "Low or unstable power supply voltage", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check the ground (earth) circuit", "expected": "Sound earth continuity to the appliance", "gasSide": false},
+      {"step": "Check the power supply voltage", "expected": "230V ~50Hz stable", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second once the earth/voltage fault is corrected.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "76 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.04.13",
+    "aliases": ["E0413", "E.04.13", "E04.13", "04.13"],
+    "meaning": "Fan impeller blocked or maximum rpm exceeded",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Fan-to-PCB wiring/connection fault", "likelihood": "high"},
+      {"cause": "Faulty fan or air-gas unit", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check the PCB-to-fan wiring connection", "expected": "Connector fully seated, no damage", "gasSide": false},
+      {"step": "Check for a jammed fan impeller", "expected": "Impeller spins freely", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for approximately 1 second once the fan/air-gas unit is repaired or replaced.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "76 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.04.17",
+    "aliases": ["E0417", "E.04.17", "E04.17", "04.17"],
+    "meaning": "Fault in gas valve control circuit",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Main PCB fault", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Check for electromagnetic interference near the boiler/PCB", "expected": "No nearby EMI sources", "gasSide": false}
+    ],
+    "reset": "Not resettable via the gas valve - main PCB replacement is indicated if the fault persists.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "76 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi 200/400/600/800 Combi 2 (and Assure 500 Combi 2)",
+    "code": "E.04.54",
+    "aliases": ["E0454", "E.04.54", "E04.54", "04.54"],
+    "meaning": "Fault in gas valve control circuit",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Faulty gas valve wiring", "likelihood": "high"},
+      {"cause": "Faulty gas valve or PCB", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check the wiring on the gas valve", "expected": "Wiring intact and correctly connected", "gasSide": true}
+    ],
+    "reset": "Replace the gas valve or PCB if wiring is confirmed sound; not a simple reset-button fault.",
+    "source": {"manual": "Baxi 600 Combi 2 Series Installation and Service Manual", "page": "77 (Section 11.2, Tab.34)", "url": "https://www.plumbnation.co.uk/documents/baxi-600-combi-2-boiler-installation-servicing-guide.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E09",
+    "aliases": ["E.09", "E009", "09", "e09"],
+    "meaning": "Gas valve connection fault (cable)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve connector/cable disconnected or damaged", "likelihood": "high"},
+      {"cause": "Main PCB fault", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check the gas valve wiring and PCB connector (X36)", "expected": "Connector fully seated, wiring intact per wiring diagram", "gasSide": true},
+      {"step": "If fault recurs after checking connections, check all other PCB connections", "expected": "All connectors fully seated", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds to attempt to relight the boiler. If 09 is still flashing or recurs regularly, check all PCB connections; if this has no effect, replace the PCB.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "44-48 (Section 17 Fault Finding)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E15",
+    "aliases": ["E.15", "E015", "15", "e15"],
+    "meaning": "Gas valve fault (command fault)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve drive/command circuit fault", "likelihood": "high"},
+      {"cause": "Main PCB fault", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check gas valve wiring and PCB connections", "expected": "Connector fully seated, wiring intact", "gasSide": true}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds. If 15 is still flashing or recurs regularly, check all PCB connections; if this has no effect, replace the PCB.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "44-48 (Section 17 Fault Finding)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E20",
+    "aliases": ["E.20", "E020", "20", "e20"],
+    "meaning": "Central heating NTC sensor fault (short circuit/open circuit)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "CH flow NTC sensor open or short circuit", "likelihood": "high"},
+      {"cause": "Sensor wiring fault or poor connection", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check correct sensor location and wiring", "expected": "Sensor correctly fitted per wiring diagram", "gasSide": false},
+      {"step": "Measure sensor cold resistance (disconnected)", "expected": "Approximately 10 kΩ at 25°C, resistance reduces as temperature increases", "gasSide": false}
+    ],
+    "reset": "No reset-button action listed; correct the sensor/wiring fault (or replace the sensor) and the fault clears once resolved.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "48 (Section 17.2, Fault Finding Solutions - Section D)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E28",
+    "aliases": ["E.28", "E028", "28", "e28"],
+    "meaning": "Flue NTC sensor fault (short circuit/open circuit)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flue gas NTC sensor open or short circuit", "likelihood": "high"},
+      {"cause": "Heat exchanger obstruction causing abnormal flue temperature reading", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Measure flue sensor cold resistance (disconnected)", "expected": "Approximately 20 kΩ at 25°C, resistance reduces as temperature increases", "gasSide": false},
+      {"step": "If pump is running, check heat exchanger for obstruction", "expected": "Heat exchanger clear, not obstructed", "gasSide": false}
+    ],
+    "reset": "No reset-button action listed; correct the sensor fault (or replace sensor/heat exchanger) and the fault clears once resolved.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "50 (Section 17.2, Fault Finding Solutions - Section M)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E40",
+    "aliases": ["E.40", "E040", "40", "e40"],
+    "meaning": "Central heating return NTC sensor fault (short circuit/open circuit)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "CH return NTC sensor open or short circuit", "likelihood": "high"},
+      {"cause": "Sensor wiring fault or poor connection", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check correct sensor location and wiring", "expected": "Sensor correctly fitted per wiring diagram", "gasSide": false},
+      {"step": "Measure sensor cold resistance (disconnected)", "expected": "check manual (manual groups CH/DHW flow sensors at approx. 10 kΩ @ 25°C - confirm return sensor uses same type before relying on this figure)", "gasSide": false}
+    ],
+    "reset": "No reset-button action listed; correct the sensor/wiring fault and the fault clears once resolved.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "44 (Section 17, Table Of Error Codes)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E55",
+    "aliases": ["E.55", "E055", "55", "e55"],
+    "meaning": "Calibration required (shown after replacing the gas valve/RDS)",
+    "severity": "info",
+    "causes": [
+      {"cause": "Gas valve (RDS) has just been replaced and needs calibrating", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Carry out the gas valve calibration procedure", "expected": "check manual (Section 14.2 of the Duo-tec 2 manual covers the calibration procedure)", "gasSide": true}
+    ],
+    "reset": "Clears once the calibration procedure (Section 14.2) has been carried out successfully.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "45 (Section 17.2)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E109",
+    "aliases": ["E.109", "109", "e109"],
+    "meaning": "Pre-circulation fault",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Pump not establishing circulation during the pre-ignition circulation period", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "check manual - no isolated field-check procedure given for this specific code in the fault-finding flow chart", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "check manual",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "46-47 (Section 17.2, operational sequence flow charts)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "low"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E110",
+    "aliases": ["E.110", "110", "e110"],
+    "meaning": "Safety (overheat) thermostat operated",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Genuine overheat due to insufficient circulation", "likelihood": "high"},
+      {"cause": "Safety thermostat faulty/open circuit", "likelihood": "medium"},
+      {"cause": "Flow/return sensor fault", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check for and correct any system faults causing overheat (circulation, air, pump)", "expected": "Free circulation, no blockages", "gasSide": false},
+      {"step": "Allow boiler to cool, then check continuity across the safety thermostat terminals", "expected": "Circuit closed/continuous when cool; open circuit indicates a tripped or failed thermostat (manual references a ~1.5 ohm threshold)", "gasSide": false},
+      {"step": "Check flow and return temperature sensors", "expected": "Resistance consistent with a healthy NTC sensor (approx. 10 kΩ @ 25°C)", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds. If 110 is still flashing, further investigation per Section 17.2 'H' is required (check thermostat continuity, flow/return sensors, or replace PCB).",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "49 (Section 17.2, Fault Finding Solutions - Section H)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E117",
+    "aliases": ["E.117", "117", "e117"],
+    "meaning": "Primary system water pressure too high (greater than 2.7 bar)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "System over-filled via the filling loop", "likelihood": "high"},
+      {"cause": "Faulty hydraulic pressure sensor", "likelihood": "medium"},
+      {"cause": "Faulty automatic filling device (where fitted)", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check system pressure at the gauge and relieve/drain to normal pressure", "expected": "1.0-1.5 bar cold", "gasSide": false},
+      {"step": "Check wiring and DC voltage at PCB pressure sensor connector (X22, green/black)", "expected": "Approximately 5V DC", "gasSide": false}
+    ],
+    "reset": "Clears once pressure is restored to the normal range; if the sensor reading is at fault, replace the hydraulic pressure sensor or PCB as indicated by the voltage check.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "49 (Section 17.2, Fault Finding Solutions - Section I)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E118",
+    "aliases": ["E.118", "118", "e118"],
+    "meaning": "Primary system water pressure too low (less than 0.5 bar)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "System water loss through a leak", "likelihood": "high"},
+      {"cause": "System not topped up after draining/service", "likelihood": "high"},
+      {"cause": "Faulty hydraulic pressure sensor", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check system pressure at the gauge and top up via the filling loop", "expected": "1.0-1.5 bar cold", "gasSide": false},
+      {"step": "Inspect for leaks on the system and boiler", "expected": "No visible leaks", "gasSide": false},
+      {"step": "Check wiring and DC voltage at PCB pressure sensor connector (X22, green/black)", "expected": "Approximately 5V DC", "gasSide": false}
+    ],
+    "reset": "Clears once pressure is restored above 0.5 bar; if the sensor reading is at fault, replace the hydraulic pressure sensor or PCB as indicated by the voltage check.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "49 (Section 17.2, Fault Finding Solutions - Section I)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E125",
+    "aliases": ["E.125", "125", "e125"],
+    "meaning": "Circulation fault (primary) - poor primary circulation: either no 1C rise within 15-30s of burner lighting, or flow temperature exceeds the set point by 30C twice within 10 minutes",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Poor primary circulation (pump fault, air in system, blockage)", "likelihood": "high"},
+      {"cause": "System not fully vented", "likelihood": "medium"},
+      {"cause": "Flow temperature sensor fault/incorrectly positioned", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Ensure the boiler and system are fully vented", "expected": "No air locks", "gasSide": false},
+      {"step": "Check flow temperature sensor connections and position", "expected": "Correctly positioned and wired", "gasSide": false},
+      {"step": "Check sensor cold resistance", "expected": "Approximately 10 kΩ at 25°C (CH sensor)", "gasSide": false},
+      {"step": "Check pump operation (voltage present and pump running) per Section B", "expected": "230V at pump when calling, pump circulates", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds. If it recurs, follow Section 17.2 'J' (venting, sensor check) and Section 'B' (pump check).",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "45, 49 (Section 17.2, Error Codes and Fault Finding Solutions - Section J)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E128",
+    "aliases": ["E.128", "128", "e128"],
+    "meaning": "Flame failure during normal operation",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Momentary loss of gas supply", "likelihood": "high"},
+      {"cause": "Ignition/sensing electrode fault", "likelihood": "medium"},
+      {"cause": "Flue disturbance (wind/downdraught)", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check gas is on and the gas line is purged of air", "expected": "Gas present at the burner", "gasSide": true},
+      {"step": "Check sensing electrode and lead connections/condition", "expected": "Electrode clean, correctly connected", "gasSide": true}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds to attempt to relight the boiler.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "45, 48 (Section 17.2, Error Codes and Fault Finding Solutions - Section E)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E130",
+    "aliases": ["E.130", "130", "e130"],
+    "meaning": "Flue NTC/thermostat operated (flue overheat lockout)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flue gas overheat due to restricted flue or recirculation", "likelihood": "high"},
+      {"cause": "Flue NTC sensor fault", "likelihood": "medium"},
+      {"cause": "Heat exchanger partially blocked", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check flue terminal and ducting for blockage/recirculation of exhaust gases", "expected": "Flue clear and correctly terminated", "gasSide": true},
+      {"step": "Measure flue NTC sensor cold resistance (disconnected)", "expected": "Approximately 20 kΩ at 25°C", "gasSide": false},
+      {"step": "Check fan operation", "expected": "Fan runs at correct speed and stops appropriately after burner shutdown", "gasSide": false}
+    ],
+    "reset": "Not covered by the simple 1-3 second reset group in the manual's general chart; rectify the flue/sensor fault, then cycle power or reset per Section 17.2 'C'/'M' guidance.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "46-47, 50 (Section 17.2)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E133",
+    "aliases": ["E.133", "133", "e133"],
+    "meaning": "Interruption of gas supply or flame failure (ignition failure/flame not detected)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas supply interrupted or insufficient (meter valve left off, airlock after cylinder change, frozen condensate affecting operation, etc.)", "likelihood": "high"},
+      {"cause": "Faulty/misaligned ignition or sensing electrode", "likelihood": "high"},
+      {"cause": "Incorrect gas valve setting/calibration (CO2)", "likelihood": "medium"},
+      {"cause": "Faulty spark generator/ignition lead", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check gas is on at the meter/valve and purge air from the supply", "expected": "Gas present and stable at the burner", "gasSide": true},
+      {"step": "Check supply pressure at the gas valve", "expected": "Minimum 17 mbar (Natural Gas) / minimum 37 mbar (Propane/LPG)", "gasSide": true},
+      {"step": "Check the gas valve CO2 setting against the commissioning instructions", "expected": "CO2% per gas type/model (see manual's commissioning section)", "gasSide": true},
+      {"step": "Check ignition electrode, lead and connections for condition and correct spark gap/position", "expected": "Electrode gap and position per manual diagram (approx. 4±0.5 mm at viewing window, 10±1 mm electrode position, 5±1 mm burner dimension - confirm exact dimension against the figure for your model)", "gasSide": true},
+      {"step": "Check for spark at the ignition electrode (up to 5 seconds, 3 attempts)", "expected": "Visible spark present", "gasSide": true},
+      {"step": "Check flame sensing electrode and lead connections/position", "expected": "Electrode clean, correctly positioned and connected", "gasSide": true}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds to attempt to relight the boiler. If this does not work, or the code recurs regularly, further investigation per Section 17.2 'F'/'G' is required.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "45, 49 (Section 17.2, Error Codes and Fault Finding Solutions - Sections F & G)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E134",
+    "aliases": ["E.134", "134", "e134"],
+    "meaning": "Elapsed time - gas valve open without gas (short ignition request repeated in a short period)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas supply interrupted or insufficient at the valve", "likelihood": "high"},
+      {"cause": "Ignition/sensing electrode fault preventing confirmed flame", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check gas is on and purged of air", "expected": "Gas present and stable at the burner", "gasSide": true},
+      {"step": "Check supply pressure at the gas valve", "expected": "Minimum 17 mbar (Natural Gas) / minimum 37 mbar (Propane/LPG)", "gasSide": true},
+      {"step": "Check ignition/sensing electrode condition and connections", "expected": "Electrode clean, correctly gapped and connected", "gasSide": true}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds to attempt to relight the boiler.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "45, 49 (Section 17.2, Error Codes and Fault Finding Solutions - Sections F & G)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E135",
+    "aliases": ["E.135", "135", "e135"],
+    "meaning": "Interruption of gas supply (internal error)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Internal gas valve/PCB communication error", "likelihood": "medium"},
+      {"cause": "Gas supply related fault as per E133/E134", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check gas supply and ignition components as per E133/E134 checks", "expected": "See E133/E134 checks", "gasSide": true},
+      {"step": "If 135 recurs, check all PCB connections", "expected": "All connectors fully seated", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds. If it recurs, check PCB connections; replace PCB if this has no effect.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "45-46 (Section 17.2)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E154",
+    "aliases": ["E.154", "154", "e154"],
+    "meaning": "Flow/return sensor temperature test fault",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow or return NTC sensor reading implausible/out of expected range", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "check manual - no isolated field-check procedure given for this specific code in the fault-finding flow chart; check flow/return sensor wiring and resistance as per Section D", "expected": "Approximately 10 kΩ at 25°C for CH sensors (see Section D)", "gasSide": false}
+    ],
+    "reset": "check manual",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "44 (Section 17, Table Of Error Codes)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "low"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E160",
+    "aliases": ["E.160", "160", "e160"],
+    "meaning": "Fan or fan wiring fault",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Fan wiring disconnected at PCB or fan connector", "likelihood": "high"},
+      {"cause": "Fan jammed or mechanically faulty", "likelihood": "medium"},
+      {"cause": "Main PCB fault", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check fan connections at PCB X11 and X23 connectors per wiring diagram", "expected": "Connectors fully seated, correct per diagram", "gasSide": false},
+      {"step": "Check for a jammed fan or faulty fan wiring", "expected": "Fan impeller spins freely, wiring intact", "gasSide": false},
+      {"step": "Check for 230V at PCB X11 connector (blue & brown)", "expected": "230V present when fan should run", "gasSide": false}
+    ],
+    "reset": "Replace the fan or wiring if jammed/faulty wiring is found; replace the PCB if 230V is not present at the X11 connector. Not a simple reset-button fault.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "48 (Section 17.2, Fault Finding Solutions - Section C)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E270",
+    "aliases": ["E.270", "270", "e270"],
+    "meaning": "Circulation fault (dry fire) - boiler has fired with inadequate/no water circulation",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "No or severely restricted water circulation through the heat exchanger while firing", "likelihood": "high"},
+      {"cause": "Pump failure or system blockage", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "check manual - verify pump operation and system circulation as per general circulation checks (Sections B/D)", "expected": "Pump runs, free circulation, correct installation pressure", "gasSide": false}
+    ],
+    "reset": "check manual",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "44 (Section 17, Table Of Error Codes)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "low"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E321",
+    "aliases": ["E.321", "321", "e321", "E163", "E.321/163"],
+    "meaning": "Hot water (DHW) NTC sensor fault (short or open circuit)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "DHW NTC sensor open or short circuit", "likelihood": "high"},
+      {"cause": "Sensor wiring fault", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check correct sensor location and wiring", "expected": "Sensor correctly fitted per wiring diagram", "gasSide": false},
+      {"step": "Measure sensor cold resistance (disconnected)", "expected": "Approximately 10 kΩ at 25°C (DHW and CH sensors), resistance reduces as temperature increases", "gasSide": false}
+    ],
+    "reset": "No reset-button action listed; correct the sensor/wiring fault and the fault clears once resolved.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "48 (Section 17.2, Fault Finding Solutions - Section D)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Baxi",
+    "series": "Baxi Duo-tec / Duo-tec 2 Combi GA Range (shared fault-code platform also used by Baxi EcoBlue, Platinum and Assure)",
+    "code": "E384",
+    "aliases": ["E.384", "384", "e384", "E164", "E.384/164"],
+    "meaning": "False flame (parasitic flame detected when burner should be off)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flame sensing electrode or wiring fault giving a false signal", "likelihood": "high"},
+      {"cause": "Main PCB fault", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check flame sensing electrode, lead and connections", "expected": "Electrode clean, correctly connected, no tracking/arcing to earth", "gasSide": true},
+      {"step": "If 384 is still flashing or recurs regularly, check all PCB connections", "expected": "All connectors fully seated", "gasSide": false}
+    ],
+    "reset": "Press the Reset button for 1 to 3 seconds. If 384 is still flashing or recurs regularly, check all PCB connections; if this has no effect, replace the PCB.",
+    "source": {"manual": "Baxi Duo-tec 2 Combi GA Range Installation & Servicing Instructions (Baxi Heating UK Ltd, 2014)", "page": "45-48 (Section 17.2)", "url": "https://www.freeboilermanuals.com/assets/pdf/baxi/Duo_tec_2.pdf"},
+    "confidence": "medium"
+  }
+]

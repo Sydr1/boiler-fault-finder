@@ -1,0 +1,872 @@
+[
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "224",
+    "aliases": ["224V", "224 V", "F224"],
+    "meaning": "Safety temperature limiter has tripped",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "No water / low water flow through primary heat exchanger (closed valve, blocked pipework)", "likelihood": "high"},
+      {"cause": "Pump failed or air-locked", "likelihood": "medium"},
+      {"cause": "Safety temperature limiter (STL) itself faulty or needs reconnecting/replacing", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Confirm system is filled and pressurised, bleed air from system", "expected": "System pressure approx. 1-1.5 bar cold (check manual for exact model figure)", "gasSide": false},
+      {"step": "Check all isolation/zone valves on primary circuit are open", "expected": "Valves fully open, no restriction to flow", "gasSide": false},
+      {"step": "Check pump runs and is not air-locked or seized", "expected": "Pump operates and circulates water, no unusual noise", "gasSide": false},
+      {"step": "Check continuity/condition of safety temperature limiter and its wiring", "expected": "Continuity present when cool; replace if open circuit or mechanically tripped", "gasSide": false}
+    ],
+    "reset": "This is a Locking fault - the boiler will not restart until manually reset at the control panel/EasyControl display. Do not reset repeatedly without first finding and fixing the cause.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "high"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "227",
+    "aliases": ["227V", "227 V"],
+    "meaning": "No flame signal after ignition",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas supply interrupted (isolation valve closed, empty LPG tank, meter issue)", "likelihood": "high"},
+      {"cause": "Frozen or blocked condensate pipe/trap preventing combustion", "likelihood": "high"},
+      {"cause": "Blocked flue terminal or flue restriction", "likelihood": "medium"},
+      {"cause": "Faulty or contaminated ignition/flame-sensing electrode", "likelihood": "medium"},
+      {"cause": "Faulty gas valve or ignition (spark) generator", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Confirm gas supply is on at meter and all isolation valves upstream of the boiler", "expected": "Gas on, no smell of gas, appliance isolation valve open", "gasSide": true},
+      {"step": "Measure gas inlet pressure at boiler test point with boiler firing", "expected": "check manual (model-specific technical data table) - typically approx. 18-22 mbar natural gas at appliance", "gasSide": true},
+      {"step": "Check condensate pipe/trap for ice or blockage, especially external runs", "expected": "Pipe clear and free-draining, trap primed", "gasSide": false},
+      {"step": "Inspect flue terminal and flue run for blockage or damage", "expected": "Terminal and flue clear and unobstructed", "gasSide": false},
+      {"step": "Inspect ignition/flame-sensing electrode for contamination, cracking or incorrect gap", "expected": "check manual for electrode gap specification", "gasSide": true},
+      {"step": "Check spark generator and ignition leads for correct operation", "expected": "Consistent spark visible/audible at burner on start-up", "gasSide": true}
+    ],
+    "reset": "This is a Locking fault - reset at the control panel/EasyControl display once the cause is found and corrected. Do not reset repeatedly on a persistent ignition fault.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "high"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "228",
+    "aliases": ["228V", "228 V"],
+    "meaning": "Flame signal present without a flame actually being there (false flame signal)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Contaminated, cracked or short-circuited flame-sensing electrode", "likelihood": "high"},
+      {"cause": "Poor earth continuity to the burner/electrode assembly", "likelihood": "medium"},
+      {"cause": "Faulty ionisation detection circuit on control PCB", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect flame-sensing electrode and lead for contamination, cracking or moisture ingress", "expected": "Electrode clean, ceramic insulator intact, lead undamaged", "gasSide": true},
+      {"step": "Check earth continuity between burner assembly and boiler earth", "expected": "Continuity present, resistance near zero", "gasSide": false},
+      {"step": "Check ionisation signal reading on diagnostics menu with burner off", "expected": "check manual for expected ionisation current value", "gasSide": true}
+    ],
+    "reset": "Locking fault - reset at the control panel/EasyControl display after the electrode/earth fault is corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "306",
+    "aliases": ["306V", "306 V"],
+    "meaning": "Flame signal detected after the gas/fuel supply to the burner has been closed",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve not closing fully / internal leak past the gas valve seat", "likelihood": "high"},
+      {"cause": "Ionisation electrode positioned incorrectly causing interference/false reading", "likelihood": "medium"},
+      {"cause": "Faulty burner control unit (air/gas ratio control)", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Perform gas valve closed-position leak test (tightness test) downstream of valve", "expected": "No measurable leak past closed gas valve", "gasSide": true},
+      {"step": "Check ionisation electrode position and gap relative to burner", "expected": "check manual for electrode position/gap specification", "gasSide": true},
+      {"step": "Replace air/gas ratio valve or control unit if fault persists after gas valve/electrode checks", "expected": "Fault clears after component replacement", "gasSide": true}
+    ],
+    "reset": "Locking fault - reset at the control panel/EasyControl display once the gas valve/electrode fault is corrected. A boiler repeatedly showing this code should not be left in service until resolved, as it indicates a potential gas valve sealing fault.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1017",
+    "aliases": ["1017W", "1017 W"],
+    "meaning": "Water pressure too low",
+    "severity": "warning",
+    "causes": [
+      {"cause": "System has not been topped up / filling loop not used after installation or draindown", "likelihood": "high"},
+      {"cause": "Water leak on primary heating circuit or at boiler connections", "likelihood": "medium"},
+      {"cause": "Faulty pressure sensor or sensor wiring", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Read system pressure gauge / EasyControl display pressure value", "expected": "At least 1 bar cold, typically 1-1.5 bar (check manual for exact model figure)", "gasSide": false},
+      {"step": "Top up system via filling loop to correct pressure", "expected": "Pressure holds at correct level after topping up and venting", "gasSide": false},
+      {"step": "Inspect visible pipework, radiators and boiler for signs of leaks", "expected": "No leaks found", "gasSide": false},
+      {"step": "If pressure will not hold, check expansion vessel charge and pressure sensor wiring", "expected": "Expansion vessel pre-charge matches system static pressure; sensor wiring intact", "gasSide": false}
+    ],
+    "reset": "Warning only - boiler will resume normal operation automatically once system pressure is corrected; no manual reset is normally required.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "high"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1021",
+    "aliases": ["1021B", "1021 B"],
+    "meaning": "Hot water temperature sensor is defective",
+    "severity": "warning",
+    "causes": [
+      {"cause": "DHW sensor open or short circuit", "likelihood": "high"},
+      {"cause": "Damaged or disconnected sensor wiring/connector", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check DHW sensor resistance against manufacturer's resistance/temperature chart", "expected": "check manual for resistance/temperature table", "gasSide": false},
+      {"step": "Check sensor wiring and connector for damage or poor contact", "expected": "Wiring intact, connector fully seated", "gasSide": false},
+      {"step": "Replace sensor if resistance is out of range or open/short circuit", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Blocking fault - boiler will resume once the sensor fault is corrected; replace sensor if fault persists.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1065",
+    "aliases": ["1065B", "1065 B"],
+    "meaning": "Pressure sensor defective or not connected",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Pressure sensor wiring disconnected or damaged", "likelihood": "high"},
+      {"cause": "Pressure sensor itself failed", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check pressure sensor connector is fully seated at PCB and sensor", "expected": "Connector secure, no corrosion", "gasSide": false},
+      {"step": "Check sensor reading against a manual pressure gauge on the system", "expected": "Displayed value matches gauge reading", "gasSide": false},
+      {"step": "Replace pressure sensor if reading is absent or inconsistent with gauge", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Blocking fault - resolves automatically once sensor connection/fault is corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1073",
+    "aliases": ["1073W", "1073 W"],
+    "meaning": "Short circuit of the flow temperature sensor",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Flow temperature sensor shorted internally", "likelihood": "high"},
+      {"cause": "Damaged wiring causing short to earth or between conductors", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Measure flow sensor resistance at the sensor and at the PCB connector", "expected": "check manual for resistance/temperature chart; near-zero resistance indicates short", "gasSide": false},
+      {"step": "Inspect wiring for chafing, trapped cable or moisture ingress", "expected": "Wiring undamaged and dry", "gasSide": false}
+    ],
+    "reset": "Warning - replace sensor and/or wiring as needed; boiler resumes normal operation once fault is cleared.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1074",
+    "aliases": ["1074W", "1074 W"],
+    "meaning": "No signal from the flow temperature sensor available",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Flow temperature sensor open circuit or disconnected", "likelihood": "high"},
+      {"cause": "Broken wiring or loose connector", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check sensor connector is fully plugged in at PCB and sensor", "expected": "Connector secure", "gasSide": false},
+      {"step": "Measure sensor resistance / check for open circuit", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Replace sensor, lead, or control unit if fault persists", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Warning - resolves automatically once sensor/wiring fault is corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1075",
+    "aliases": ["1075W", "1075 W"],
+    "meaning": "Short circuit of the temperature sensor at the heating block",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Heating block (heat exchanger block) sensor shorted", "likelihood": "high"},
+      {"cause": "Wiring fault causing short circuit", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Measure heating block sensor resistance", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Inspect connecting lead for damage", "expected": "Lead intact, no chafing or moisture ingress", "gasSide": false}
+    ],
+    "reset": "Warning - replace sensor, connecting lead, or control appliance as required; resolves once corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1076",
+    "aliases": ["1076W", "1076 W"],
+    "meaning": "No signal from the temperature sensor at the heating block available",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Heating block sensor open circuit or disconnected", "likelihood": "high"},
+      {"cause": "Broken connecting lead or control unit fault", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check sensor connector and wiring continuity", "expected": "Connector secure, continuity present", "gasSide": false},
+      {"step": "Replace sensor, connecting lead or control unit if fault persists", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Warning - resolves automatically once sensor/wiring fault is corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "360",
+    "aliases": ["360", "code plug error"],
+    "meaning": "Incompatible code plug fitted to the control board",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Wrong code plug fitted (e.g. from a different model/output boiler)", "likelihood": "high"},
+      {"cause": "Code plug damaged or not fully seated", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check code plug part number matches the boiler model/output on the data badge", "expected": "Code plug part number matches boiler specification", "gasSide": false},
+      {"step": "Reseat or replace the code plug", "expected": "Fault clears once correct code plug is fitted and seated", "gasSide": false}
+    ],
+    "reset": "Reset at the control panel after fitting the correct code plug.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1010",
+    "aliases": ["1010", "no BUS"],
+    "meaning": "No EMS-Bus communication - cable for EMS-Bus is not correctly connected or is damaged",
+    "severity": "warning",
+    "causes": [
+      {"cause": "EMS bus cable between boiler and room controller/EasyControl disconnected or damaged", "likelihood": "high"},
+      {"cause": "Incorrect wiring polarity or loose terminal connection", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check EMS-Bus cable connections at boiler and at room controller/EasyControl module", "expected": "Connections secure, cable undamaged", "gasSide": false},
+      {"step": "Check cable continuity end to end", "expected": "Continuity present, no breaks", "gasSide": false}
+    ],
+    "reset": "Resolves automatically once communication cable fault is corrected; no manual reset normally required.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "2920",
+    "aliases": ["2920V", "2920 V"],
+    "meaning": "Fault in flame monitoring",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Faulty or damaged igniter/ionisation cabling", "likelihood": "high"},
+      {"cause": "Faulty igniter electrode", "likelihood": "medium"},
+      {"cause": "Faulty burner control module", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check igniter/ionisation cabling for damage or poor connection", "expected": "Cabling intact and securely connected", "gasSide": true},
+      {"step": "Inspect igniter electrode condition", "expected": "Electrode clean and undamaged, check manual for gap specification", "gasSide": true},
+      {"step": "Replace burner/ignition control module if cabling and electrode are sound", "expected": "Fault clears after replacement", "gasSide": true}
+    ],
+    "reset": "Locking fault - reset at the control panel once the ignition/flame-monitoring fault is corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "2924",
+    "aliases": ["2924V", "2924 V"],
+    "meaning": "No feedback from the modulating gas valve / gas valve relay defective",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve relay or feedback circuit faulty", "likelihood": "high"},
+      {"cause": "Modulating gas valve itself faulty", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Press reset and observe whether burner starts correctly", "expected": "Burner starts and modulates normally", "gasSide": true},
+      {"step": "Check gas valve wiring/connector for damage or poor contact", "expected": "Wiring and connector intact", "gasSide": true},
+      {"step": "Replace gas valve if fault persists after wiring checks", "expected": "Fault clears after replacement", "gasSide": true}
+    ],
+    "reset": "Locking fault - press reset once; if the fault recurs immediately, replace the gas valve rather than repeatedly resetting.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "2925",
+    "aliases": ["2925V", "2925 V"],
+    "meaning": "Feedback from the modulating gas valve too low",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas supply restricted (partially closed valve, undersized meter/pipework)", "likelihood": "high"},
+      {"cause": "Fault in ionisation electrode or its connections affecting modulation feedback", "likelihood": "medium"},
+      {"cause": "Gas valve itself faulty", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check all gas shut-off valves are fully open", "expected": "Valves fully open", "gasSide": true},
+      {"step": "Check gas line/pipework for restriction and correct pipe sizing", "expected": "No restriction, pipework sized per manual", "gasSide": true},
+      {"step": "Check ionisation electrode and its connections", "expected": "Electrode and connections intact", "gasSide": true}
+    ],
+    "reset": "Locking fault - reset at the control panel once gas supply/electrode issues are corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "2927",
+    "aliases": ["2927B", "2927 B"],
+    "meaning": "Flame failed during burner operation",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Gas supply valve not fully open or interrupted momentarily", "likelihood": "high"},
+      {"cause": "Flue system fault (blockage, poor draw)", "likelihood": "medium"},
+      {"cause": "Burner adjustment/combustion setting incorrect", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check gas shut-off valves are fully open", "expected": "Valves fully open", "gasSide": true},
+      {"step": "Check flue system for blockage or damage", "expected": "Flue clear, terminal unobstructed", "gasSide": false},
+      {"step": "Check burner combustion settings / flue gas analysis", "expected": "check manual for CO2/CO specification for this model", "gasSide": true}
+    ],
+    "reset": "Blocking fault - boiler will attempt to restart automatically; if it escalates to a locking fault, correct the cause before resetting.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "2946",
+    "aliases": ["2946V", "2946 V"],
+    "meaning": "Incorrect code plug detected",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Wrong or incompatible code plug fitted", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Check code plug matches boiler model/output on data badge, replace the code plug", "expected": "Fault clears once correct code plug fitted", "gasSide": false}
+    ],
+    "reset": "Reset at the control panel after fitting the correct code plug.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "2948",
+    "aliases": ["2948B", "2948 B"],
+    "meaning": "No flame signal with low burner output",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Burner/electrode contaminated, reducing ignition/flame-sensing reliability at low fire", "likelihood": "high"},
+      {"cause": "Gas valve minimum rate set incorrectly", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect and clean burner and ignition/flame-sensing electrode", "expected": "Burner clean; boiler starts automatically after cleaning", "gasSide": true},
+      {"step": "Check gas valve minimum rate setting against manual", "expected": "check manual for minimum rate specification", "gasSide": true}
+    ],
+    "reset": "Blocking fault - boiler restarts automatically after cleaning/correction; no manual reset normally required.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "2950",
+    "aliases": ["2950B", "2950 B"],
+    "meaning": "No flame signal following the starting procedure",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Air in the system / pump not circulating correctly during start sequence", "likelihood": "medium"},
+      {"cause": "Ignition/flame sensor assembly fault", "likelihood": "medium"},
+      {"cause": "System not adequately filled", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check system water fill level and vent any trapped air", "expected": "System fully filled and vented", "gasSide": false},
+      {"step": "Check pump operation during start sequence", "expected": "Pump runs and circulates correctly", "gasSide": false},
+      {"step": "Inspect ignition/flame sensor assembly", "expected": "check manual for condition/gap specification", "gasSide": true}
+    ],
+    "reset": "Blocking fault - resolves automatically once the cause is corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "63", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=63"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "815",
+    "aliases": ["815W", "815 W"],
+    "meaning": "Low loss header temperature sensor faulty (system boiler installations with a low loss header)",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Low loss header sensor open/short circuit", "likelihood": "high"},
+      {"cause": "Damaged sensor wiring", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check low loss header sensor resistance and wiring", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Replace sensor if open/short circuit confirmed", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Warning - resolves automatically once the sensor fault is corrected.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "1037",
+    "aliases": ["1037W", "1037 W", "1068", "1068W"],
+    "meaning": "Outside temperature sensor defective",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Outdoor sensor open/short circuit or weather-damaged", "likelihood": "high"},
+      {"cause": "Damaged or waterlogged sensor cable run", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check outdoor sensor resistance against chart", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Inspect sensor cable run for damage/water ingress", "expected": "Cable intact and dry", "gasSide": false}
+    ],
+    "reset": "Warning - resolves automatically once sensor/wiring fault corrected; weather compensation will be disabled until fixed.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar 8000 Style / 8000 Life / 8000 Plus / 4000 (EasyControl, Heatronic 4 numeric codes)",
+    "code": "208",
+    "aliases": ["208O", "208 O"],
+    "meaning": "Chimney sweep / service demand indicator (operational status, not a fault)",
+    "severity": "info",
+    "causes": [
+      {"cause": "Boiler service interval reached / chimney sweep function activated for flue gas testing", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Confirm with customer whether annual service is due", "expected": "No fault action required - informational only", "gasSide": false}
+    ],
+    "reset": "Not applicable - this is a status/service reminder code, not a fault requiring reset.",
+    "source": {"manual": "Worcester Greenstar 8000 Life Series Installation and Maintenance Instructions - Section 10.1.2 Fault Code Table", "page": "62", "url": "https://www.manualslib.com/manual/2400148/Worcester-Greenstar-8000-Life-Series.html?page=62"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "EA",
+    "aliases": ["E.A", "EA fault"],
+    "meaning": "No ionisation (flame) detected after ignition",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas supply off or interrupted", "likelihood": "high"},
+      {"cause": "Frozen or blocked condensate pipe", "likelihood": "high"},
+      {"cause": "Blocked flue outlet/terminal", "likelihood": "medium"},
+      {"cause": "Faulty gas valve", "likelihood": "low"},
+      {"cause": "Ignition timing/electrode fault", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Confirm gas supply is on at the appliance and upstream isolation valves", "expected": "Gas on, no restriction", "gasSide": true},
+      {"step": "Check condensate pipe/trap for ice or blockage", "expected": "Pipe clear and free-draining", "gasSide": false},
+      {"step": "Check flue terminal and run for blockage", "expected": "Flue clear and unobstructed", "gasSide": false},
+      {"step": "Measure gas inlet pressure at boiler (natural gas)", "expected": "Approx. 18-22 mbar at boiler inlet, 19-23 mbar at meter (confirm against this model's technical data)", "gasSide": true},
+      {"step": "Inspect ignition/flame-sensing electrode and gas valve operation", "expected": "check manual for electrode gap; gas valve opens/modulates correctly", "gasSide": true}
+    ],
+    "reset": "Press the reset button on the boiler fascia once. Only one reset is permitted - if the fault returns immediately, do not reset again; investigate the cause before further attempts.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "67-69", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=67"},
+    "confidence": "high"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "E9",
+    "aliases": ["E.9"],
+    "meaning": "Safety temperature limiter in the CH flow has tripped / MAX thermostat activated (flow, safety or return temperature exceeding 95 degC)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Poor circulation - pump stuck, air-locked or failed", "likelihood": "high"},
+      {"cause": "Closed valve or blockage restricting primary flow", "likelihood": "medium"},
+      {"cause": "Flow, return or safety temperature sensor fault giving a false high reading", "likelihood": "low"},
+      {"cause": "Flue gas thermostat overheat condition", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check pump operates and is not air-locked or seized", "expected": "Pump runs, circulates water correctly", "gasSide": false},
+      {"step": "Check all primary circuit valves are open and system is free of blockage", "expected": "Full flow through primary circuit", "gasSide": false},
+      {"step": "Check flow, return and safety sensors for correct resistance/reading", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Bleed air from system", "expected": "No air noise, system fully vented", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the boiler fascia once the cause has been identified and corrected. Do not reset repeatedly on a recurring overheat condition.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "67-69", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=69"},
+    "confidence": "high"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "A7",
+    "aliases": ["A.7"],
+    "meaning": "Hot water (DHW) NTC sensor defective",
+    "severity": "warning",
+    "causes": [
+      {"cause": "DHW sensor open or short circuit", "likelihood": "high"},
+      {"cause": "Damaged sensor wiring/connector", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check DHW sensor resistance against resistance/temperature chart", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Check sensor wiring and connections", "expected": "Wiring intact, connector fully seated", "gasSide": false}
+    ],
+    "reset": "Resolves automatically once sensor/wiring fault is corrected; DHW performance may be affected until fixed.",
+    "source": {"manual": "Worcester Greenstar CDi Classic User Instructions - Error Codes table", "page": "16", "url": "https://www.manualslib.com/manual/807442/Worcester-Greenstar-Cdi-Classic.html?page=16"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "A8",
+    "aliases": ["A.8"],
+    "meaning": "Break in communication to FX (remote) controls",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Wiring fault between boiler and remote/room control (e.g. FW/FX bus)", "likelihood": "high"},
+      {"cause": "Faulty remote control unit", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check wiring between boiler and remote control device", "expected": "Wiring intact, correct polarity", "gasSide": false},
+      {"step": "Check remote control unit for fault by substitution if available", "expected": "Communication restored", "gasSide": false}
+    ],
+    "reset": "Resolves automatically once communication wiring/control fault corrected.",
+    "source": {"manual": "Worcester Greenstar CDi Classic User Instructions - Error Codes table", "page": "16", "url": "https://www.manualslib.com/manual/807442/Worcester-Greenstar-Cdi-Classic.html?page=16"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "b1",
+    "aliases": ["B1", "b.1"],
+    "meaning": "Code plug not detected",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Code plug not fitted or not fully seated in its socket", "likelihood": "high"},
+      {"cause": "Code plug or PCB socket damaged", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check the code plug is present and fully seated in the PCB socket", "expected": "Code plug correctly seated", "gasSide": false},
+      {"step": "Replace code plug or control board if it remains undetected", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Reset at the boiler fascia once the code plug is correctly fitted/replaced.",
+    "source": {"manual": "Worcester Greenstar CDi Classic User Instructions - Error Codes table", "page": "16", "url": "https://www.manualslib.com/manual/807442/Worcester-Greenstar-Cdi-Classic.html?page=16"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "b7",
+    "aliases": ["B7", "9U"],
+    "meaning": "Internal control error (HCM/code plug related); control board replacement indicated",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Internal control board (Heat Control Module) malfunction", "likelihood": "high"},
+      {"cause": "Code plug/control board compatibility problem", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Reseat code plug and power-cycle the boiler", "expected": "Fault clears on power cycle if transient", "gasSide": false},
+      {"step": "Replace control board if fault persists", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Reset at the fascia; if the fault recurs, the control board (PCB) requires replacement.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "67", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=67"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "C6",
+    "aliases": ["C.6"],
+    "meaning": "Fan problem - fan running too fast, too slow, not running, or airflow blockage detected",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Flue or air intake terminal blocked or restricted", "likelihood": "high"},
+      {"cause": "Fan faulty or fan wiring/connector damaged", "likelihood": "medium"},
+      {"cause": "Fan speed feedback (hall sensor) fault", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect flue terminal and air intake for blockage or damage", "expected": "Clear and unobstructed", "gasSide": false},
+      {"step": "Check fan runs smoothly and reaches commanded speed on diagnostics display", "expected": "Fan speed matches demanded speed within tolerance", "gasSide": false},
+      {"step": "Check fan wiring/connector for damage or poor contact", "expected": "Wiring and connector intact", "gasSide": false},
+      {"step": "Replace fan if it fails to reach correct speed with good wiring/clear flue", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the fascia once the flue/fan fault has been corrected.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "67", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=67"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "D1",
+    "aliases": ["D.1"],
+    "meaning": "Return sensor error - sensor wet/damaged, or disconnected/open circuit",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Return sensor wet or water-damaged", "likelihood": "high"},
+      {"cause": "Return sensor disconnected or wiring damaged", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check return sensor and its pocket/connection for moisture ingress", "expected": "Sensor dry and properly sealed in pocket", "gasSide": false},
+      {"step": "Check sensor resistance and wiring continuity", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Replace sensor if wet, damaged, or out of resistance range", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Resolves automatically once sensor fault corrected; may require reset at fascia if it has escalated to a locking fault.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "D4",
+    "aliases": ["D.4"],
+    "meaning": "Excessive temperature difference between flow and safety sensors (greater than approx. 15 degC)",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Poor circulation / trapped air causing uneven heat exchanger temperatures", "likelihood": "high"},
+      {"cause": "Flow or safety sensor inaccurate/faulty", "likelihood": "medium"},
+      {"cause": "Pump undersized or failing for the system", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Bleed air from the system and check pump operation", "expected": "No air noise, pump circulates correctly", "gasSide": false},
+      {"step": "Compare flow and safety sensor readings against each other and a reference thermometer", "expected": "Sensors read consistently with each other", "gasSide": false}
+    ],
+    "reset": "Blocking fault - resolves automatically once circulation/sensor issue corrected.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "E2",
+    "aliases": ["E.2"],
+    "meaning": "CH flow NTC sensor defective (short or open circuit)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow sensor short or open circuit", "likelihood": "high"},
+      {"cause": "Damaged sensor wiring/connector", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check flow sensor resistance against resistance/temperature chart", "expected": "check manual for resistance/temperature chart", "gasSide": false},
+      {"step": "Check sensor wiring and connector", "expected": "Wiring intact, connector secure", "gasSide": false},
+      {"step": "Replace flow sensor if out of range", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the fascia once the sensor fault is corrected.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "67", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=67"},
+    "confidence": "high"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "E5",
+    "aliases": ["E.5"],
+    "meaning": "Flow temperature too high (primary sensor reading exceeded, approx. 110 degC)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Pump failure or air-lock restricting circulation", "likelihood": "high"},
+      {"cause": "Closed/restricted valve on primary circuit", "likelihood": "medium"},
+      {"cause": "Flow sensor fault giving false high reading", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check pump runs and circulates correctly, bleed air", "expected": "Pump operates, no air noise", "gasSide": false},
+      {"step": "Check all primary circuit valves are open", "expected": "Full flow available", "gasSide": false},
+      {"step": "Check flow sensor reading against reference", "expected": "check manual for resistance/temperature chart", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the fascia once the overheat cause has been corrected.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "67", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=67"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "EF",
+    "aliases": ["E.F"],
+    "meaning": "Central heating - large delta T (greater than approx. 18 degC) between flow and return detected while burner is at minimum output",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Restricted system flow (closed valves, sludge/debris in heat exchanger or system)", "likelihood": "high"},
+      {"cause": "Pump speed set too low or pump failing", "likelihood": "medium"},
+      {"cause": "Trapped air in system", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check pump speed setting and operation", "expected": "Pump set per manual and circulating correctly", "gasSide": false},
+      {"step": "Check for closed valves, blocked filter, or sludge restricting flow", "expected": "System flows freely, filter clean", "gasSide": false},
+      {"step": "Bleed air from system", "expected": "System fully vented", "gasSide": false}
+    ],
+    "reset": "Resolves automatically once flow/circulation issue is corrected.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "69", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=69"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "F0",
+    "aliases": ["F.0"],
+    "meaning": "Internal error (various internal sensor/control failures)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Internal control board fault", "likelihood": "high"},
+      {"cause": "Multiple possible internal sensor failures grouped under this general code", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Power-cycle the boiler and attempt reset", "expected": "Fault clears if transient", "gasSide": false},
+      {"step": "Contact Worcester Bosch technical helpline with the specific internal cause code shown on the display (if available) for further diagnosis", "expected": "check manual / helpline for specific internal cause code interpretation", "gasSide": false},
+      {"step": "Replace control board if fault persists after power cycle", "expected": "Fault clears after replacement", "gasSide": false}
+    ],
+    "reset": "Press reset on the fascia; if the fault recurs, the control board likely requires replacement - contact Worcester Bosch technical support.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "F7",
+    "aliases": ["F.7"],
+    "meaning": "Flame detected even though the boiler is switched off / flame error",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve leaking/not closing fully", "likelihood": "high"},
+      {"cause": "Flame-sensing electrode contaminated or faulty, giving a false flame signal", "likelihood": "medium"},
+      {"cause": "Control PCB ionisation detection fault", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check gas valve closes fully and does not leak (tightness test)", "expected": "No leak past closed gas valve", "gasSide": true},
+      {"step": "Inspect flame-sensing electrode for contamination or damage", "expected": "Electrode clean and undamaged", "gasSide": true},
+      {"step": "Check earth continuity and ionisation circuit", "expected": "Continuity present, correct ionisation reading", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the fascia once the gas valve/electrode fault is corrected.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "FA",
+    "aliases": ["F.A", "false flame"],
+    "meaning": "Flame detected after gas supply shut off, or gas valve EV2 leak (tightness) test failed",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve EV2 internal leak - fails the automatic leak test", "likelihood": "high"},
+      {"cause": "Ionisation electrode interference giving false flame reading after shut-off", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Perform gas valve EV2 tightness/leak test per manual procedure", "expected": "Valve passes leak test with no measurable leak", "gasSide": true},
+      {"step": "Replace gas valve if it fails the leak test", "expected": "Fault clears after gas valve replacement", "gasSide": true},
+      {"step": "Check ionisation electrode position/condition", "expected": "check manual for position/gap specification", "gasSide": true}
+    ],
+    "reset": "Press the reset button on the fascia; if the gas valve fails its leak test, replace the gas valve before returning the boiler to service.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "Fb",
+    "aliases": ["F.b"],
+    "meaning": "Gas valve EV1 leak (tightness) test failed",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve EV1 internal leak - fails the automatic leak test", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Perform gas valve EV1 tightness/leak test per manual procedure", "expected": "Valve passes leak test with no measurable leak", "gasSide": true},
+      {"step": "Replace gas valve if it fails the leak test", "expected": "Fault clears after gas valve replacement", "gasSide": true}
+    ],
+    "reset": "Press the reset button on the fascia; replace the gas valve if the leak test continues to fail.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "FD",
+    "aliases": ["Fd", "F.D"],
+    "meaning": "Mains power error (per Installation, Commissioning and Servicing Instructions); some simplified user instructions describe this as the reset button having been pressed without a preceding fault",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Mains power supply interruption or voltage irregularity to the boiler", "likelihood": "medium"},
+      {"cause": "Reset button pressed when no fault was present (per simplified user guide wording)", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check mains supply voltage and stability to the boiler", "expected": "check manual for supply voltage tolerance", "gasSide": false},
+      {"step": "Check for loose/damaged mains wiring or connector at the boiler", "expected": "Wiring secure and undamaged", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the fascia. If this code recurs without an obvious power interruption, check manual / contact Worcester Bosch technical support, as published sources disagree on the precise trigger for this code.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions (Fault Finding) and Worcester Greenstar CDi Classic User Instructions (Error Codes table)", "page": "68 / 16", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "low"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "A1",
+    "aliases": ["A.1"],
+    "meaning": "Pump malfunction - pump stuck or running in air",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Pump seized or stuck", "likelihood": "high"},
+      {"cause": "Air trapped in pump/system preventing circulation", "likelihood": "high"},
+      {"cause": "Pump wiring/capacitor fault", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check pump rotor is free (release/jog pump if seized) and runs", "expected": "Pump rotates freely and circulates water", "gasSide": false},
+      {"step": "Bleed air from pump and system", "expected": "No air noise, system fully vented", "gasSide": false},
+      {"step": "Check pump wiring and capacitor (if applicable)", "expected": "Wiring intact, capacitor within spec", "gasSide": false}
+    ],
+    "reset": "Blocking fault - boiler resumes automatically once pump/air issue is cleared; may require reset at fascia if escalated to lockout.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "C1",
+    "aliases": ["C.1"],
+    "meaning": "Airflow interrupted during operation",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Flue or air intake temporarily blocked or restricted", "likelihood": "high"},
+      {"cause": "Air pressure switch fault", "likelihood": "medium"},
+      {"cause": "Fan fault", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect flue terminal and air intake for blockage", "expected": "Clear and unobstructed", "gasSide": false},
+      {"step": "Check air pressure switch operation and tubing", "expected": "Switch operates correctly, tubing undamaged", "gasSide": false},
+      {"step": "Check fan operation", "expected": "Fan runs and reaches commanded speed", "gasSide": false}
+    ],
+    "reset": "Blocking fault - resolves automatically once airflow is restored.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Worcester Bosch",
+    "series": "Greenstar CDi Classic / CDi Compact / Greenstar i / i Junior (Heatronic 3 alphanumeric codes)",
+    "code": "C4",
+    "aliases": ["C.4"],
+    "meaning": "Continuous fan operation detected - no 20-minute (or longer) continuous off period recorded in the preceding 24 hours",
+    "severity": "warning",
+    "causes": [
+      {"cause": "Fan relay or PCB stuck on", "likelihood": "medium"},
+      {"cause": "Control demand continuously calling for heat with no natural rest period", "likelihood": "medium"},
+      {"cause": "Wiring fault holding fan on", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check fan stops fully when there is no heat demand", "expected": "Fan stops completely with no demand", "gasSide": false},
+      {"step": "Check fan relay/PCB output and wiring", "expected": "Output switches off correctly with no demand", "gasSide": false}
+    ],
+    "reset": "Blocking - system requires a rest period; resolves automatically once a normal off cycle occurs.",
+    "source": {"manual": "Worcester Greenstar CDi Compact Installation, Commissioning and Servicing Instructions - Fault Finding and Diagnosis", "page": "68", "url": "https://www.manualslib.com/manual/1258041/Worcester-Greenstar-Cdi-Compact.html?page=68"},
+    "confidence": "low"
+  }
+]

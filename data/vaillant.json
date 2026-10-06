@@ -1,0 +1,740 @@
+[
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.00",
+    "aliases": ["F00", "f.00", "f00", "F.0", "F0"],
+    "meaning": "Interruption: Flow temperature sensor (flow NTC circuit open)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow temperature sensor (NTC) plug not plugged in or has come loose", "likelihood": "high"},
+      {"cause": "Multiple plug on the PCB not plugged in correctly", "likelihood": "medium"},
+      {"cause": "Interruption/break in cable harness", "likelihood": "medium"},
+      {"cause": "Flow NTC sensor defective", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Isolate electrically and inspect flow temperature sensor connector/plug for secure fit", "expected": "Plug fully seated, no corrosion", "gasSide": false},
+      {"step": "Check cable harness continuity from flow NTC to PCB multiple plug", "expected": "Continuous, no open circuit", "gasSide": false},
+      {"step": "Measure flow NTC resistance and compare to manufacturer NTC resistance/temperature chart", "expected": "check manual", "gasSide": false},
+      {"step": "Check PCB connector for flow sensor input", "expected": "No damage/corrosion", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel to restart the product (manual advises max. three attempts). If the sensor is confirmed open-circuit or out of range, replace the flow NTC sensor before resetting again.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.46-47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.01",
+    "aliases": ["F01", "f.01", "f01", "F.1", "F1"],
+    "meaning": "Interruption: Return temperature sensor (return NTC circuit open)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Return temperature sensor (NTC) plug not plugged in or has come loose", "likelihood": "high"},
+      {"cause": "Multiple plug on the PCB not plugged in correctly", "likelihood": "medium"},
+      {"cause": "Interruption/break in cable harness", "likelihood": "medium"},
+      {"cause": "Return NTC sensor defective", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Isolate electrically and inspect return temperature sensor connector/plug for secure fit", "expected": "Plug fully seated, no corrosion", "gasSide": false},
+      {"step": "Check cable harness continuity from return NTC to PCB multiple plug", "expected": "Continuous, no open circuit", "gasSide": false},
+      {"step": "Measure return NTC resistance and compare to manufacturer NTC resistance/temperature chart", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel to restart the product (manual advises max. three attempts). Replace the return NTC sensor if confirmed faulty before resetting again.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.46-47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.10",
+    "aliases": ["F10", "f.10", "f10"],
+    "meaning": "Short circuit: Flow temperature sensor (flow NTC)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow NTC sensor defective or short-circuited", "likelihood": "high"},
+      {"cause": "Short circuit in cable harness or cable/housing", "likelihood": "medium"},
+      {"cause": "NTC plug not seated correctly on PCB", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect flow NTC cable and casing for chafing/short to earth", "expected": "No damage, no continuity to earth", "gasSide": false},
+      {"step": "Check NTC plug and PCB connector", "expected": "Correctly seated, undamaged", "gasSide": false},
+      {"step": "Measure flow NTC resistance against resistance/temperature chart", "expected": "check manual", "gasSide": false},
+      {"step": "Replace flow NTC sensor if resistance reads near zero (short)", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel to restart the product. If fault recurs, replace the affected NTC sensor before further reset attempts.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.46", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.11",
+    "aliases": ["F11", "f.11", "f11"],
+    "meaning": "Short circuit: Return temperature sensor (return NTC)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Return NTC sensor defective or short-circuited", "likelihood": "high"},
+      {"cause": "Short circuit in cable harness or housing", "likelihood": "medium"},
+      {"cause": "NTC plug not seated correctly on PCB", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect return NTC cable and housing for chafing/short to earth", "expected": "No damage, no continuity to earth", "gasSide": false},
+      {"step": "Check NTC plug and PCB connector", "expected": "Correctly seated, undamaged", "gasSide": false},
+      {"step": "Measure return NTC resistance against resistance/temperature chart", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel to restart the product. Replace the return NTC sensor if confirmed short-circuited before resetting again.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.46", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus system/regular boilers with cylinder sensor accessory (e.g. VU GB 656/4-5 A)",
+    "code": "F.13",
+    "aliases": ["F13", "f.13", "f13"],
+    "meaning": "Cylinder temperature sensor short circuit",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Cylinder NTC sensor defective", "likelihood": "high"},
+      {"cause": "Short circuit in cable harness", "likelihood": "medium"},
+      {"cause": "Damaged cable/casing", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect cylinder sensor cable and casing for damage/short to earth", "expected": "No damage, no continuity to earth", "gasSide": false},
+      {"step": "Measure cylinder NTC resistance against resistance/temperature chart", "expected": "check manual", "gasSide": false},
+      {"step": "Check connector at PCB/cylinder thermostat accessory terminals (C1/C2)", "expected": "Correctly seated, undamaged", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel to restart the product. Replace the cylinder temperature sensor if confirmed short-circuited before resetting again.",
+    "source": {"manual": "ecoTEC plus Installation and maintenance instructions (VU GB 656/4-5 A), doc 0020214491_01", "page": "Appendix D, p.36", "url": "https://professional.vaillant.co.uk/downloads/z/ecotec/0020214491-01-933723.pdf"},
+    "confidence": "medium"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.20",
+    "aliases": ["F20", "f.20", "f20"],
+    "meaning": "Safety switch-off: Temperature limiter (overheat/thermal cut-out triggered via flow/return NTC)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Maximum temperature at flow/return NTC too high when the safety cut-out function operates", "likelihood": "high"},
+      {"cause": "Incorrect/loose earth connection between cable harness and product", "likelihood": "medium"},
+      {"cause": "Flow or return NTC defective (loose connection)", "likelihood": "medium"},
+      {"cause": "Arc/black discharge via ignition cable, ignition plug or ignition electrode causing interference", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check flow temperature sensor is correctly thermally connected (clipped to pipe)", "expected": "Firm thermal contact, correct position", "gasSide": false},
+      {"step": "Check cable harness and earthing of product", "expected": "Secure earth continuity", "gasSide": false},
+      {"step": "Ensure sufficient purging/bleeding of heating system has been carried out", "expected": "No air locks, full circulation", "gasSide": false},
+      {"step": "Inspect ignition cable, plug and electrode for arcing/black discharge marks", "expected": "No tracking/arcing visible", "gasSide": true}
+    ],
+    "reset": "Allow the boiler to cool, then press the reset button on the control panel to restart. Investigate and correct the overheat cause (circulation/air/earthing) before repeated resets.",
+    "source": {"manual": "ecoTEC plus Installation and maintenance instructions (VU GB 656/4-5 A), doc 0020214491_01 / ecoTEC pro doc 0020244995_05", "page": "Appendix D, p.35-36 / p.46", "url": "https://professional.vaillant.co.uk/downloads/z/ecotec/0020214491-01-933723.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.22",
+    "aliases": ["F22", "f.22", "f22"],
+    "meaning": "Safety switch-off: Low water pressure",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "No or insufficient water in the product / system pressure too low (below approx. 0.5 bar)", "likelihood": "high"},
+      {"cause": "Water pressure sensor defective", "likelihood": "medium"},
+      {"cause": "Cable to pump or water pressure sensor loose/not connected/defective", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check system pressure gauge/display reading", "expected": "1.0-2.0 bar cold fill pressure (check manual for exact model spec)", "gasSide": false},
+      {"step": "Check plug and cable to water pressure sensor and heating pump", "expected": "Secure connection, no damage", "gasSide": false},
+      {"step": "Inspect for visible leaks at radiators, pipework, pump, and valves", "expected": "No leaks", "gasSide": false},
+      {"step": "Activate and purge using check programme P.00 after repressurising", "expected": "System purges without further pressure drop", "gasSide": false}
+    ],
+    "reset": "Top up system pressure to the correct cold-fill level using the filling loop, then press the reset button on the control panel. If pressure repeatedly drops, investigate for a system leak before resetting again.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.46", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.23",
+    "aliases": ["F23", "f.23", "f23"],
+    "meaning": "Safety switch-off: Temperature spread (differential) too large between flow and return",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Water circulation too low (pump blocked/insufficient output, air in system)", "likelihood": "high"},
+      {"cause": "Flow and return NTC sensors connected/inverted the wrong way round", "likelihood": "medium"},
+      {"cause": "Strainer in hydraulic block blocked", "likelihood": "medium"},
+      {"cause": "Plug/cable to heating pump or water pressure sensor faulty", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check plug and cable to heating pump and water pressure sensor", "expected": "Secure, undamaged", "gasSide": false},
+      {"step": "Check for air in the heating circuit and bleed as required", "expected": "No air locks", "gasSide": false},
+      {"step": "Verify flow and return NTC sensors are not inverted", "expected": "Flow sensor on flow pipe, return sensor on return pipe", "gasSide": false},
+      {"step": "Inspect strainer in hydraulic block for blockage", "expected": "Clear of debris", "gasSide": false},
+      {"step": "Confirm heating pump circulation is adequate (check pump speed/parameters D.19, D.14)", "expected": "Sufficient flow rate per pump curve", "gasSide": false},
+      {"step": "Run check programme P.00 to purge and verify", "expected": "Normal circulation restored", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after correcting circulation/sensor issue. Activate check programme P.00 to purge before returning to normal operation.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.46", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.24",
+    "aliases": ["F24", "f.24", "f24"],
+    "meaning": "Safety switch-off: Temperature rise/increase too fast",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Pump blocked or insufficient pump output", "likelihood": "high"},
+      {"cause": "Air in the product/heating circuit", "likelihood": "high"},
+      {"cause": "System pressure too low / temperature gradient too great on heating flow", "likelihood": "medium"},
+      {"cause": "Non-return valve blocked or incorrectly installed", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check plug and cable to the heating pump", "expected": "Secure, undamaged", "gasSide": false},
+      {"step": "Check for air in the heating circuit, bleed using internal/automatic air vent", "expected": "No air locks, vent functioning", "gasSide": false},
+      {"step": "Check system pressure is within range", "expected": "1.0-2.0 bar cold (check manual for model)", "gasSide": false},
+      {"step": "Inspect non-return valve for blockage/incorrect installation", "expected": "Free-flowing, correctly orientated", "gasSide": false},
+      {"step": "Run check programme P.00 to confirm circulation restored", "expected": "Stable temperature rise", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after resolving the circulation fault. Run check programme P.00 to verify before leaving the system.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.46-47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.25",
+    "aliases": ["F25", "f.25", "f25"],
+    "meaning": "Safety switch-off: Flue gas temperature too high",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flue pipework route blocked, affected by adverse wind conditions, or too long", "likelihood": "high"},
+      {"cause": "Insufficient water in heating circuit / internal air vent not functioning", "likelihood": "medium"},
+      {"cause": "Heating pump fault", "likelihood": "medium"},
+      {"cause": "Faulty plug/safety cut-out plug/cable harness", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect flue route for blockage, correct length/number of bends, and terminal position relative to wind effects", "expected": "Clear, within Vaillant design length/bend limits", "gasSide": true},
+      {"step": "Check plug, safety cut-out plug and cable harness to heating pump", "expected": "Secure, undamaged", "gasSide": false},
+      {"step": "Check internal air vent functions correctly", "expected": "Vents air automatically", "gasSide": false},
+      {"step": "Confirm sufficient water in heating circuit and adequate pump circulation", "expected": "Correct system pressure and flow", "gasSide": false},
+      {"step": "Run check programme P.00 before returning to service", "expected": "Flue gas temperature within normal range", "gasSide": true}
+    ],
+    "reset": "Press the reset button on the control panel once the flue blockage/circulation fault is corrected. Do not repeatedly reset without investigating the flue route — this is a combustion safety-critical fault.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Pro (VUW ..6/5-3) and shared ecoTEC fault-code architecture",
+    "code": "F.26",
+    "aliases": ["F26", "f.26", "f26"],
+    "meaning": "Fault: Fuel (gas) valve not working",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas valve assembly stepper motor defective or not connected", "likelihood": "high"},
+      {"cause": "Multiple plug on PCB not correctly plugged in", "likelihood": "medium"},
+      {"cause": "Break in cable harness to gas valve", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check gas valve assembly stepper motor plug and cable for secure connection", "expected": "Correctly seated, undamaged", "gasSide": true},
+      {"step": "Check passage for rinsing/voltage supply to gas valve stepper motor", "expected": "Correct voltage present per manual", "gasSide": true},
+      {"step": "Check multiple plug on PCB and cable harness", "expected": "Correctly seated, continuity present", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after confirming gas valve wiring/connections are sound. If the gas valve stepper motor is confirmed defective, replace the gas valve assembly (gas safe isolation required) before resetting.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.27",
+    "aliases": ["F27", "f.27", "f27"],
+    "meaning": "Safety switch-off: Flame simulation (flame signal detected when no flame should be present)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Monitoring/ionisation electrode reports an incorrect flame signal", "likelihood": "high"},
+      {"cause": "Moisture on the electronics", "likelihood": "medium"},
+      {"cause": "Electronics (flame monitor) defective", "likelihood": "medium"},
+      {"cause": "Gas solenoid valve leaking internally", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check gas pressure at the upper test opening", "expected": "Within permissible range per data badge (natural gas 13-23 mbar; LPG 23-43 mbar)", "gasSide": true},
+      {"step": "Inspect monitoring/ionisation electrode condition and position", "expected": "Clean, correctly positioned, no carbon deposit", "gasSide": true},
+      {"step": "Check for moisture ingress on PCB/electronics box", "expected": "Dry, no condensation/corrosion", "gasSide": false},
+      {"step": "Gas-tightness test the gas solenoid valve for internal leakage", "expected": "No leakage past closed valve", "gasSide": true},
+      {"step": "Check PCB flame detection circuit", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after confirming no real flame simulation cause. Do not reset repeatedly without investigating the ionisation electrode and gas valve — this is a gas safety-critical fault (risk of undetected flame).",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.36", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.28",
+    "aliases": ["F28", "f.28", "f28"],
+    "meaning": "Start-up failure: Ignition unsuccessful (failure during start-up/first ignition attempt)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas flow pressure too low or gas pressure monitor/thermal cut-out triggered", "likelihood": "high"},
+      {"cause": "Air in gas supply (e.g. after new installation, meter work, or LPG tank changeover)", "likelihood": "high"},
+      {"cause": "Ignition system fault: ignition transformer, ignition cable, ignition plug or ignition electrode defective", "likelihood": "medium"},
+      {"cause": "Ionisation current interrupted (cable/electrode) or incorrect earthing of product", "likelihood": "medium"},
+      {"cause": "Condensate duct blocked", "likelihood": "medium"},
+      {"cause": "Incorrect gas restrictor/injector or incorrect spare-part gas valve fitted", "likelihood": "low"},
+      {"cause": "Gas meter defective", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check gas stopcock is fully open", "expected": "Fully open", "gasSide": true},
+      {"step": "Measure gas flow (inlet working) pressure at the test point with boiler firing on check programme P.01", "expected": "Natural gas (H): 13.0-23.0 mbar; LPG (P): 23.0-43.0 mbar", "gasSide": true},
+      {"step": "Purge air from the gas line if recently worked on", "expected": "Clean gas at test point, no air", "gasSide": true},
+      {"step": "Inspect ignition transformer, ignition cable, ignition plug and ignition electrode for damage/wear", "expected": "No cracking, correct electrode gap (check manual)", "gasSide": true},
+      {"step": "Check ionisation/monitoring electrode cable and connection for continuity", "expected": "Continuous, no interruption", "gasSide": true},
+      {"step": "Check condensate duct/trap for blockage", "expected": "Clear, draining correctly", "gasSide": false},
+      {"step": "Verify correct gas restrictor/injector fitted for gas type and that any replacement gas valve is the correct part", "expected": "Matches Vaillant spec for gas type", "gasSide": true},
+      {"step": "Check product earthing", "expected": "Sound earth continuity", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel to retry ignition. If the boiler repeatedly fails to ignite, do not keep resetting — investigate gas supply pressure and ignition components; this is a gas safety-critical fault.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.36; gas pressure check section 9.11.4", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.29",
+    "aliases": ["F29", "f.29", "f29"],
+    "meaning": "Operating failure: Ignition unsuccessful / re-ignition failed (flame loss during operation, re-ignition did not succeed)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Gas supply temporarily interrupted/stopped during operation", "likelihood": "high"},
+      {"cause": "Flue gas recirculation disturbing the flame", "likelihood": "medium"},
+      {"cause": "Condensate duct blocked", "likelihood": "medium"},
+      {"cause": "Ignition transformer has a spark failure", "likelihood": "medium"},
+      {"cause": "Defective earthing of product, or loose cable connection to gas valve assembly/electrode", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check for interruptions in gas supply (meter, ECV, other appliances running simultaneously)", "expected": "Stable, continuous gas supply", "gasSide": true},
+      {"step": "Inspect flue terminal and route for recirculation of flue gases back into air intake", "expected": "Terminal clearances per manual, no recirculation", "gasSide": true},
+      {"step": "Check condensate duct/trap for blockage", "expected": "Clear, draining correctly", "gasSide": false},
+      {"step": "Inspect ignition transformer and cable for spark failure/intermittent spark", "expected": "Consistent spark at electrode", "gasSide": true},
+      {"step": "Check earthing of product and cable connections to gas valve assembly and electrode", "expected": "Sound, no loose connections", "gasSide": true}
+    ],
+    "reset": "Press the reset button on the control panel to restart. If re-ignition continues to fail, investigate flue recirculation and ignition transformer before further resets — this is a gas safety-critical fault.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.36", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.32",
+    "aliases": ["F32", "f.32", "f32"],
+    "meaning": "Fault: Fan",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Fan defective, blocked, or not connected", "likelihood": "high"},
+      {"cause": "Plug on fan or multiple plug on PCB not correctly plugged in", "likelihood": "medium"},
+      {"cause": "Hall sensor (fan speed feedback) defective", "likelihood": "medium"},
+      {"cause": "Break in cable harness", "likelihood": "low"},
+      {"cause": "Flue gas route blocked causing abnormal fan loading", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check fan plug and PCB multiple plug for secure connection", "expected": "Correctly seated, undamaged", "gasSide": false},
+      {"step": "Inspect fan for physical blockage or seized bearing; confirm it spins freely and reaches correct speed", "expected": "Runs freely, correct speed per diagnostic code", "gasSide": false},
+      {"step": "Check Hall sensor function/signal", "expected": "check manual", "gasSide": false},
+      {"step": "Inspect flue gas route for blockage affecting fan load", "expected": "Clear flue route", "gasSide": true},
+      {"step": "Check cable harness continuity to fan", "expected": "Continuous", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after confirming fan wiring/mechanical operation. Replace the fan if it is confirmed defective before resetting again.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.36", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.49",
+    "aliases": ["F49", "f.49", "f49"],
+    "meaning": "Fault: eBUS (communications bus undervoltage/short)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Undervoltage on the eBUS", "likelihood": "high"},
+      {"cause": "eBUS overload (too many accessories) or short circuit on the eBUS", "likelihood": "medium"},
+      {"cause": "Two eBUS power supplies connected with different polarities", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check number of eBUS accessories/controllers connected does not exceed Vaillant limit", "expected": "Within permitted eBUS load", "gasSide": false},
+      {"step": "Check eBUS wiring for short circuit", "expected": "No short to earth/between cores", "gasSide": false},
+      {"step": "If multiple eBUS power sources exist, check polarity matches across all devices", "expected": "Consistent polarity", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after correcting the eBUS wiring/load fault.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.36", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.61",
+    "aliases": ["F61", "f.61", "f61"],
+    "meaning": "Fault: Fuel (gas) valve actuation — the gas valve assembly cannot be actuated",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Cable harness supply line to the gas valve defective (short to earth or short circuit)", "likelihood": "high"},
+      {"cause": "Gas valve defective", "likelihood": "medium"},
+      {"cause": "PCB defective", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check cable harness and plug to gas valve assembly for short circuit/damage", "expected": "No short to earth, intact insulation", "gasSide": true},
+      {"step": "Check gas valve assembly operation (rinse/purge function)", "expected": "Opens/closes correctly", "gasSide": true},
+      {"step": "Check PCB gas valve drive output", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after confirming gas valve wiring is sound. Replace the gas valve assembly (gas safe isolation required) if confirmed defective.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.36", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.62",
+    "aliases": ["F62", "f.62", "f62"],
+    "meaning": "Fault: Fuel (gas) valve switch-off delay — delayed shutdown of gas valve detected after flame extinguished",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Secondary light: ignition/monitoring electrode indicates delayed extinguishing of flame signal", "likelihood": "high"},
+      {"cause": "Gas valve defective (not closing promptly)", "likelihood": "medium"},
+      {"cause": "Dirt on burner surface", "likelihood": "medium"},
+      {"cause": "PCB defective", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Inspect burner surface for dirt/deposits", "expected": "Clean burner", "gasSide": true},
+      {"step": "Check gas valve closes promptly when flame demand ends", "expected": "Immediate, clean shut-off, no afterglow", "gasSide": true},
+      {"step": "Check plug, cable harness and PCB associated with gas valve switch-off", "expected": "Secure, undamaged", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after cleaning the burner/confirming gas valve shut-off. Replace the gas valve (gas safe isolation required) if it fails to close promptly.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.36", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.63",
+    "aliases": ["F63", "f.63", "f63"],
+    "meaning": "Fault: EEPROM (PCB memory fault)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "EEPROM on PCB faulty", "likelihood": "high"},
+      {"cause": "Electronics defective generally", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Power-cycle the product and recheck for recurrence", "expected": "Fault may or may not clear; log if recurring", "gasSide": false},
+      {"step": "Check PCB for visible damage/corrosion", "expected": "No damage", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel. If the fault persists, the PCB must be replaced — this fault is not generally resolvable by reset alone per the manual (\"Replace: PCB\").",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.64",
+    "aliases": ["F64", "f.64", "f64"],
+    "meaning": "Fault: Electronics / safety-relevant sensor (flow sensor or flame recording sensor signal implausible)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Safety-relevant sensor or cable defective (e.g. flow sensor)", "likelihood": "high"},
+      {"cause": "Flame recording sensor (e.g. ionisation electrode) giving an unstable signal", "likelihood": "medium"},
+      {"cause": "Electronics (PCB) defective", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check flow sensor and its cable to the PCB", "expected": "Secure, undamaged", "gasSide": false},
+      {"step": "Inspect ionisation/flame recording electrode for unstable signal (carbon build-up, poor positioning)", "expected": "Clean, stable signal", "gasSide": true},
+      {"step": "Check PCB for fault", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after checking/cleaning the flame sensing electrode. Replace PCB if electronics are confirmed defective.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.65",
+    "aliases": ["F65", "f.65", "f65"],
+    "meaning": "Fault: Electronics temperature (PCB overheating)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Electronics overheating due to external influences (e.g. hot airing cupboard, blocked ventilation)", "likelihood": "high"},
+      {"cause": "Electronics (PCB) defective", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check installation location temperature/ventilation around the boiler case", "expected": "Within normal ambient range, unobstructed casing vents", "gasSide": false},
+      {"step": "Check PCB for fault if ambient temperature is normal", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Allow the electronics to cool, press the reset button on the control panel. If required, reduce the environmental/ambient temperature around the appliance. Replace the PCB if the fault persists with normal ambient conditions.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.67",
+    "aliases": ["F67", "f.67", "f67"],
+    "meaning": "Fault: Electronics / flame (implausible flame signal)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Implausible flame signal reported to electronics", "likelihood": "high"},
+      {"cause": "Flame monitor defective", "likelihood": "medium"},
+      {"cause": "PCB defective", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check cable harness to flame monitor/ionisation electrode", "expected": "Secure, undamaged", "gasSide": true},
+      {"step": "Inspect flame monitor electrode for contamination/incorrect position", "expected": "Clean, correctly positioned", "gasSide": true},
+      {"step": "Check PCB flame signal input circuit", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after checking/cleaning the flame monitor electrode and cabling.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Pro (VUW ..6/5-3) and shared ecoTEC fault-code architecture",
+    "code": "F.68",
+    "aliases": ["F68", "f.68", "f68"],
+    "meaning": "Fault: Flame signal unstable (flame monitor reports an unstable flame signal)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Incorrect air ratio / gas flow pressure out of range", "likelihood": "high"},
+      {"cause": "Gas injector incorrect or partially blocked", "likelihood": "medium"},
+      {"cause": "Condensate route blocked, causing combustion disturbance", "likelihood": "medium"},
+      {"cause": "Ionisation flow fault (cable/electrode) or flue gas recirculation", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check air ratio/combustion setting and CO2 content at flue gas analysis point", "expected": "check manual (model/gas-type specific CO2 target)", "gasSide": true},
+      {"step": "Measure gas flow (inlet) pressure", "expected": "Natural gas (H): 13.0-23.0 mbar; LPG (P): 23.0-43.0 mbar", "gasSide": true},
+      {"step": "Inspect gas injector for correct size/blockage", "expected": "Correct injector for gas type, unobstructed", "gasSide": true},
+      {"step": "Check condensate route/trap for blockage", "expected": "Clear, draining", "gasSide": false},
+      {"step": "Inspect ionisation electrode and cable for poor contact or carbon build-up", "expected": "Clean, continuous", "gasSide": true},
+      {"step": "Check flue terminal for gas recirculation into the air intake", "expected": "No recirculation, correct terminal clearances", "gasSide": true}
+    ],
+    "reset": "Press the reset button on the control panel after correcting the combustion/air ratio or gas pressure issue. This is combustion safety-critical — do not repeatedly reset without resolving the root cause and re-checking flue gas readings.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.47", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.70",
+    "aliases": ["F70", "f.70", "f70"],
+    "meaning": "Fault: Invalid Device Specific Number (DSN) — incorrect/missing DSN or coding resistor, typically after a PCB or display replacement",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Display and PCB replaced at the same time and DSN not reset/matched", "likelihood": "high"},
+      {"cause": "Incorrect or missing output-range coding resistor fitted", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Confirm whether display and/or PCB were recently replaced", "expected": "Identify replacement history", "gasSide": false},
+      {"step": "Check output-range coding resistor is the correct value/fitted for the appliance kW rating", "expected": "Matches appliance rating per spares documentation", "gasSide": false}
+    ],
+    "reset": "If the display and PCB have been replaced, set/confirm the Device Specific Number under diagnostic parameter D.93 to match the appliance, then restart. Not resolvable by the ordinary reset button alone.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.37", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.71",
+    "aliases": ["F71", "f.71", "f71"],
+    "meaning": "Fault: Flow sensor (flow temperature sensor returns implausible/constant values)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow temperature sensor incorrectly positioned at supply pipe (poor thermal contact)", "likelihood": "high"},
+      {"cause": "Flow temperature sensor defective", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check flow temperature sensor is correctly clipped/thermally connected to the flow pipe", "expected": "Firm thermal contact, correct position", "gasSide": false},
+      {"step": "Check flow sensor resistance/signal for implausible constant value", "expected": "Varies with temperature per NTC chart", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after correcting sensor positioning or replacing the flow sensor.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.37", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.72",
+    "aliases": ["F72", "f.72", "f72"],
+    "meaning": "Fault: Flow/return sensor (temperature difference between flow and return NTC too great / implausible)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow and/or return temperature sensor function fault or poor thermal connection", "likelihood": "high"},
+      {"cause": "Flow/return NTC temperature difference too great due to circulation fault", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check flow temperature sensor function and thermal connection", "expected": "Firm contact, correct readings", "gasSide": false},
+      {"step": "Check return temperature sensor function and thermal connection", "expected": "Firm contact, correct readings", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after confirming both NTC sensors are functioning and correctly fitted.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.37", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.73",
+    "aliases": ["F73", "f.73", "f73"],
+    "meaning": "Fault: Water pressure sensor signal too weak / in the wrong range (too low)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Interruption or short circuit of/to the water pressure sensor supply line", "likelihood": "high"},
+      {"cause": "Short circuit to GND (earth) in the supply line to the water pressure sensor", "likelihood": "medium"},
+      {"cause": "Water pressure sensor defective", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check actual system water pressure", "expected": "Within normal operating range", "gasSide": false},
+      {"step": "Check earth connection, cable and plug to water pressure sensor for short circuit to GND", "expected": "No short circuit", "gasSide": false},
+      {"step": "Test water pressure sensor output signal", "expected": "check manual", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after correcting the water pressure sensor wiring or replacing the sensor.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.37", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.74",
+    "aliases": ["F74", "f.74", "f74"],
+    "meaning": "Fault: Water pressure sensor signal too strong / outside correct range (too high)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Water pressure too high in the system", "likelihood": "high"},
+      {"cause": "Line to water pressure sensor has a short circuit to 5V/24V supply", "likelihood": "medium"},
+      {"cause": "Internal fault in the water pressure sensor", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check actual system water pressure for over-pressurisation", "expected": "Within normal operating range (not excessively high)", "gasSide": false},
+      {"step": "Check water pressure sensor supply line for short circuit to 5V/24V", "expected": "No short circuit", "gasSide": false}
+    ],
+    "reset": "If system pressure is too high, drain water from the system to the correct level, then check the water pressure sensor before restarting the product.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.37", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.75",
+    "aliases": ["F75", "f.75", "f75"],
+    "meaning": "Fault: Pump / water shortage — no pressure rise/jump detected when starting the pump",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Water pressure sensor and/or heating pump defective", "likelihood": "high"},
+      {"cause": "Air in the heating installation", "likelihood": "high"},
+      {"cause": "Insufficient water in the product", "likelihood": "medium"},
+      {"cause": "Adjustable bypass not set correctly, or external expansion vessel not connected at the return", "likelihood": "medium"},
+      {"cause": "Oversized pipework (low loss header or heating pipes >1.5in diameter) causing insufficient pressure differential — requires F.75 service set", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check water pressure sensor function", "expected": "check manual", "gasSide": false},
+      {"step": "Check heating pump for blockage and correct operation", "expected": "Runs freely, correct speed", "gasSide": false},
+      {"step": "Bleed air from the heating circuit", "expected": "No air locks", "gasSide": false},
+      {"step": "Check adjustable bypass setting", "expected": "Set per system type (per manual)", "gasSide": false},
+      {"step": "Confirm external expansion vessel is connected at the return, not the flow", "expected": "Correctly connected at return", "gasSide": false},
+      {"step": "Activate check programme P.00 to purge and verify pressure rise", "expected": "Pressure rises when pump starts", "gasSide": false},
+      {"step": "If low loss header or >1.5in pipework fitted, install the Vaillant F.75 service set (3/4in seal replaced with screen)", "expected": "Pressure differential restored", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after bleeding the system and confirming pump/sensor operation. Activate check programme P.00 to verify before leaving site.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47 / p.37", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Plus / ecoTEC Pro / ecoTEC Exclusive (shared fault-code architecture, 2010-present combi/system/regular)",
+    "code": "F.77",
+    "aliases": ["F77", "f.77", "f77"],
+    "meaning": "Fault: Flue non-return valve / condensate pump — no flue non-return flap feedback, or condensate pump overflow",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "No response/feedback from flue non-return flap (VR40 accessory)", "likelihood": "high"},
+      {"cause": "Condensate pump overflow or defective", "likelihood": "medium"},
+      {"cause": "Cable to VR40 accessory faulty (wiring, feedback switch)", "likelihood": "medium"},
+      {"cause": "Bridge from surface-mounted thermostat or 2-in-7 multi-functional module missing", "likelihood": "low"}
+    ],
+    "checks": [
+      {"step": "Check cable and feedback switch wiring to VR40 flue non-return flap accessory", "expected": "Secure, correct feedback signal", "gasSide": true},
+      {"step": "Check condensate pump for overflow/blockage and correct operation", "expected": "Pumps away condensate without overflow", "gasSide": false},
+      {"step": "Check bridge wiring from surface-mounted thermostat or 2-in-7 multi-functional module if fitted", "expected": "Bridged per installation instructions", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after correcting the flue non-return flap wiring or condensate pump fault.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05 / ecoTEC plus doc 0020214491_01", "page": "Appendix D, p.47-48 / p.37", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Pro (VUW ..6/5-3) with UK link box accessory, and shared ecoTEC fault-code architecture",
+    "code": "F.78",
+    "aliases": ["F78", "f.78", "f78"],
+    "meaning": "Interrupt: DHW outlet sensor on external control — UK link box connected without the domestic hot water temperature sensor being bridged",
+    "severity": "warning",
+    "causes": [
+      {"cause": "UK link box accessory connected without the DHW temperature sensor terminal being bridged per the accessory's installation instructions", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Check UK link box accessory configuration and electrical connection, including DHW sensor bridge", "expected": "DHW sensor terminal correctly bridged per accessory instructions", "gasSide": false}
+    ],
+    "reset": "Correct the accessory wiring/bridge, then press the reset button. Per the manual, the unit displays this fault but has not actually malfunctioned — it indicates a wiring configuration issue rather than a component failure.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.48", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Pro (VUW ..6/5-3) and shared ecoTEC fault-code architecture",
+    "code": "F.83",
+    "aliases": ["F83", "f.83", "f83"],
+    "meaning": "Fault: NTC temperature gradient (temperature difference between flow and return NTC is too small)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow/return temperature sensor function fault or poor thermal connection", "likelihood": "high"},
+      {"cause": "Insufficient water volume/circulation masking true temperature difference", "likelihood": "medium"}
+    ],
+    "checks": [
+      {"step": "Check flow and return temperature sensor function and correct thermal connection", "expected": "Firm contact, plausible readings", "gasSide": false},
+      {"step": "Confirm sufficient water volume/circulation in the system", "expected": "Correct pressure and flow", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after confirming sensor fitting and system water volume/circulation.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.48", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Pro (VUW ..6/5-3) and shared ecoTEC fault-code architecture",
+    "code": "F.84",
+    "aliases": ["F84", "f.84", "f84"],
+    "meaning": "Fault: NTC temperature difference implausible (flow/return temperature difference is implausible)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow/return temperature sensor incorrect thermal connection or sensors inverted (swapped)", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Check flow/return temperature sensor correct thermal connection and that sensors are not inverted/swapped", "expected": "Flow sensor on flow, return sensor on return, firm thermal contact", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after correcting sensor fitting/orientation.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.48", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  },
+  {
+    "make": "Vaillant",
+    "series": "ecoTEC Pro (VUW ..6/5-3) and shared ecoTEC fault-code architecture",
+    "code": "F.85",
+    "aliases": ["F85", "f.85", "f85"],
+    "meaning": "Fault: NTCs fitted incorrectly (flow/return temperature sensors returning incorrect/implausible values)",
+    "severity": "lockout",
+    "causes": [
+      {"cause": "Flow/return temperature sensors incorrectly fitted (poor thermal connection)", "likelihood": "high"}
+    ],
+    "checks": [
+      {"step": "Check flow/return temperature sensor correct thermal connection", "expected": "Firm thermal contact, correctly clipped to pipework", "gasSide": false}
+    ],
+    "reset": "Press the reset button on the control panel after correcting sensor fitting.",
+    "source": {"manual": "ecoTEC pro Installation and maintenance instructions (VUW ..6/5-3), doc 0020244995_05", "page": "Appendix D, p.48", "url": "https://professional.vaillant.co.uk/downloads/product-manuals/ecotec-pro-1/ecotec-pro-24-28-combi-installation-and-maintenance-instructions-2055535.pdf"},
+    "confidence": "high"
+  }
+]
